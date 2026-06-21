@@ -1,0 +1,538 @@
+---
+import Layout from '@/layouts/en/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+// Keep your existing Layout import
+
+const solutions = [
+  {
+    id: 'bridge-structure',
+    no: '01',
+    category: 'STRUCTURAL SAFETY',
+    title: 'Bridge & Building Structural Health Monitoring Solution',
+    desc: 'For bridges, long-span structures, buildings, and critical load-bearing components, we deliver long-term monitoring systems ranging from point-based strain sensing to whole-structure condition analysis.',
+    image: '/images/solutions/bridge-structure.jpg',
+    targets: ['Critical load-bearing components', 'Mid-span areas & supports', 'Settlement & tilt', 'Vibration response'],
+    technologies: ['FBG strain gauges', 'Displacement sensors', 'Inclinometers', 'Accelerometers', 'Hydrostatic leveling sensors'],
+    deliverables: ['Monitoring point layout', 'Interrogator & fiber configuration', 'Monitoring platform', 'Threshold-based alerts'],
+    href: '/solutions/bridge-structure',
+  },
+  {
+    id: 'energy-pipeline',
+    no: '02',
+    category: 'ENERGY SECURITY',
+    title: 'Power Cable & Energy Pipeline Monitoring Solution',
+    desc: 'For cable tunnels, utility corridors, oil and gas pipelines, and long-distance transmission assets, this solution continuously monitors temperature rise, hot spots, leakage, intrusion, and abnormal third-party construction activity.',
+    image: '/images/solutions/energy-pipeline.jpg',
+    targets: ['Temperature rise & hot spots', 'Leakage risks', 'Third-party construction', 'Route intrusion'],
+    technologies: ['DTS distributed temperature sensing', 'DAS distributed acoustic sensing', 'FBG temperature sensors', 'Remote alerting platform'],
+    deliverables: ['Fiber route design', 'System channel configuration', 'Zoned localization', 'Integrated alert response'],
+    href: '/solutions/energy-pipeline',
+  },
+  {
+    id: 'industrial-equipment',
+    no: '03',
+    category: 'INDUSTRIAL MONITORING',
+    title: 'Industrial Equipment Condition Monitoring Solution',
+    desc: 'For critical machinery, storage tanks, pressure vessels, production lines, and large rotating equipment, we provide integrated monitoring of temperature, vibration, load, and structural condition.',
+    image: '/images/solutions/industrial-equipment.jpg',
+    targets: ['Critical machinery', 'Storage tanks & vessels', 'Equipment vibration', 'Temperature & load'],
+    technologies: ['FBG temperature sensors', 'FBG accelerometers', 'FBG strain sensors', 'DAS', 'Data analytics platform'],
+    deliverables: ['Measurement-point design', 'Sensor installation plan', 'Edge data acquisition', 'Trend-based diagnostics'],
+    href: '/solutions/industrial-equipment',
+  },
+  {
+    id: 'agriculture-coldchain',
+    no: '04',
+    category: 'AGRICULTURAL ENVIRONMENT',
+    title: 'Agricultural Facilities & Cold-Chain Environmental Monitoring Solution',
+    desc: 'Suitable for cold storage facilities, plant factories, seed banks, incubation chambers, laboratories, and equipment rooms, this solution establishes a multi-zone, traceable temperature monitoring system.',
+    image: '/images/solutions/agriculture-coldchain.jpg',
+    targets: ['Cold-storage temperature zones', 'Cultivation environments', 'Equipment rooms', 'Temperature anomalies'],
+    technologies: ['DTS distributed temperature sensing', 'FBG temperature sensors', 'Multi-point acquisition units', 'Remote alerting platform'],
+    deliverables: ['Zone-based monitoring design', 'Room & fiber routing plan', 'Temperature alerts', 'Historical reports'],
+    href: '/solutions/agriculture-coldchain',
+  },
+];
+
+const architectureLayers = [
+  {
+    no: '01',
+    title: 'Sensing Layer',
+    desc: 'Uses FBG, DTS, DAS, and supporting sensors to capture raw strain, temperature, displacement, vibration, and acoustic data.',
+    items: ['FBG sensors', 'Distributed fiber optics', 'Fiber-optic cables', 'Field installation components'],
+  },
+  {
+    no: '02',
+    title: 'Data Acquisition Layer',
+    desc: 'Uses interrogators, DTS/DAS units, and edge acquisition devices for multi-channel signal collection, data processing, and communications.',
+    items: ['Fiber-optic interrogators', 'DTS / DAS units', 'Edge acquisition', 'Network communications'],
+  },
+  {
+    no: '03',
+    title: 'Platform Layer',
+    desc: 'Centralizes data, trends, asset status, alert records, and project operations through the monitoring platform.',
+    items: ['Real-time data', 'Trend analysis', 'Visualization dashboard', 'Report management'],
+  },
+  {
+    no: '04',
+    title: 'Alerting Layer',
+    desc: 'Applies threshold, rate-of-change, trend, and event-recognition logic to support tiered alerts and follow-up response.',
+    items: ['Threshold alerts', 'Trend alerts', 'Event recognition', 'Alert integration'],
+  },
+];
+
+const deliverySteps = [
+  {
+    no: '01',
+    title: 'Requirements Assessment',
+    desc: 'Define monitored assets, critical risk points, site conditions, data requirements, and project scope.',
+  },
+  {
+    no: '02',
+    title: 'System Design',
+    desc: 'Complete sensor selection, monitoring-point layout, fiber routing, system configuration, and platform feature planning.',
+  },
+  {
+    no: '03',
+    title: 'Deployment & Commissioning',
+    desc: 'Provide equipment installation, sensor deployment, system commissioning, data verification, and initial training support.',
+  },
+  {
+    no: '04',
+    title: 'Operation & Maintenance',
+    desc: 'Support remote access, alert optimization, data analysis, system expansion, and long-term technical service.',
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+
+    <!-- ===== Solutions Hero ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-white px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            SOLUTIONS
+          </div>
+
+          <h1 class="mt-5 text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
+            From Sensing Requirements to
+            <span class="block text-cyan-600">Deployable Monitoring Systems</span>
+          </h1>
+
+          <p class="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+            Gangmeng Sensor develops fiber-optic monitoring systems around the risk points,
+            installation conditions, and data objectives of each application. We combine sensors,
+            distributed sensing units, data acquisition equipment, monitoring platforms, and alerting mechanisms
+            into solutions that are deployable, scalable, and designed for long-term operation.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#featured-solutions" class="btn btn-primary btn-lg">
+              View Typical Solutions
+              <Icon name="mdi:arrow-down" width="18" height="18" />
+            </a>
+
+            <a
+              href="/contact#contact"
+              class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white"
+            >
+              Request Project Consultation
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-slate-200 pt-6 text-sm text-slate-500">
+            <span>Monitored Asset Assessment</span>
+            <span>Monitoring System Design</span>
+            <span>On-Site Deployment Support</span>
+          </div>
+        </div>
+
+        <!-- Solution Overview -->
+        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-100 blur-3xl"></div>
+
+          <div class="relative">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-xs font-medium tracking-[0.14em] text-cyan-700">
+                  SOLUTION FRAMEWORK
+                </div>
+                <div class="mt-2 text-2xl font-semibold text-slate-900">
+                  Fiber-Optic Monitoring System Architecture
+                </div>
+              </div>
+
+              <Icon
+                name="mdi:vector-polyline"
+                width="34"
+                height="34"
+                class="text-cyan-600"
+              />
+            </div>
+
+            <div class="mt-8 space-y-3">
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-sm font-semibold text-cyan-700">
+                  01
+                </span>
+                <div>
+                  <div class="font-medium text-slate-900">Field Sensing</div>
+                  <div class="mt-1 text-xs text-slate-500">
+                    Sensors and distributed fiber optics capture critical parameters
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-sm font-semibold text-cyan-700">
+                  02
+                </span>
+                <div>
+                  <div class="font-medium text-slate-900">Data Acquisition</div>
+                  <div class="mt-1 text-xs text-slate-500">
+                    Monitoring units, interrogators, and edge devices process data
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-sm font-semibold text-cyan-700">
+                  03
+                </span>
+                <div>
+                  <div class="font-medium text-slate-900">Platform & Alerts</div>
+                  <div class="mt-1 text-xs text-slate-500">
+                    Visualization, trend analysis, and integrated anomaly alerts
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Sticky Navigation ===== -->
+    <div class="sticky top-16 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-6 py-4 text-sm lg:px-8">
+        <a href="#featured-solutions" class="whitespace-nowrap font-semibold text-cyan-700">
+          Featured Solutions
+        </a>
+        <a href="#bridge-structure" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Structural Health Monitoring
+        </a>
+        <a href="#energy-pipeline" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Energy & Pipelines
+        </a>
+        <a href="#industrial-equipment" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Industrial Equipment
+        </a>
+        <a href="#agriculture-coldchain" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Agriculture & Cold Chain
+        </a>
+        <a href="#architecture" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          System Architecture
+        </a>
+        <a href="#delivery" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Project Delivery
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Featured Solutions ===== -->
+    <section
+      id="featured-solutions"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+              <span class="h-px w-8 bg-cyan-600"></span>
+              FEATURED SOLUTIONS
+            </div>
+
+            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Systematic Monitoring Design
+              <span class="block text-cyan-600">Built Around Critical Risk Points</span>
+            </h2>
+
+            <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+              Each solution can be tailored to the monitored asset, site conditions, installation method,
+              monitoring period, and data-use requirements. The following examples illustrate common
+              system designs for key application areas.
+            </p>
+          </div>
+
+          <a
+            href="/contact#contact"
+            class="group inline-flex w-fit items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+          >
+            Request a Customized Solution Proposal
+            <span class="text-lg transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          {
+            solutions.map((item) => (
+              <article
+                id={item.id}
+                class="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+              >
+                <a href={item.href} class="block">
+                  <div class="relative h-64 overflow-hidden bg-slate-200">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-6">
+                      <div class="text-xs font-medium tracking-[0.14em] text-cyan-200">
+                        {item.category}
+                      </div>
+                    </div>
+
+                    <div class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-sm font-semibold text-slate-800 backdrop-blur">
+                      {item.no}
+                    </div>
+                  </div>
+
+                  <div class="p-7">
+                    <h3 class="text-2xl font-semibold tracking-tight text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                      {item.desc}
+                    </p>
+
+                    <div class="mt-7 grid gap-6 sm:grid-cols-2">
+                      <div>
+                        <div class="text-xs font-medium tracking-[0.12em] text-slate-400">
+                          MONITORED ASSETS
+                        </div>
+
+                        <div class="mt-3 flex flex-wrap gap-2">
+                          {
+                            item.targets.map((tag) => (
+                              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                                {tag}
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="text-xs font-medium tracking-[0.12em] text-slate-400">
+                          RECOMMENDED TECHNOLOGIES
+                        </div>
+
+                        <div class="mt-3 flex flex-wrap gap-2">
+                          {
+                            item.technologies.map((tag) => (
+                              <span class="rounded-full bg-cyan-50 px-3 py-1 text-xs text-cyan-700">
+                                {tag}
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-7 border-t border-slate-100 pt-5">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <div class="text-xs text-slate-400">SOLUTION SCOPE</div>
+                          <div class="mt-1 text-sm font-medium text-slate-700">
+                            {item.deliverables.join(' · ')}
+                          </div>
+                        </div>
+
+                        <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== System Architecture ===== -->
+    <section
+      id="architecture"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            SYSTEM ARCHITECTURE
+          </div>
+
+          <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            From Field Sensing to Platform Alerts
+          </h2>
+
+          <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            A monitoring solution involves more than sensor installation. It must also address data acquisition,
+            communications, platform visualization, alert logic, and ongoing maintenance to ensure stable
+            long-term operation.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            architectureLayers.map((item) => (
+              <div class="min-h-[320px] rounded-2xl border border-slate-200 bg-slate-50 p-7">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium text-cyan-700">{item.no}</span>
+                  <span class="text-xs tracking-[0.12em] text-slate-400">SYSTEM LAYER</span>
+                </div>
+
+                <h3 class="mt-10 text-2xl font-semibold tracking-tight text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  {
+                    item.items.map((tag) => (
+                      <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+                        {tag}
+                      </span>
+                    ))
+                  }
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Delivery Process ===== -->
+    <section
+      id="delivery"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div>
+            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+              <span class="h-px w-8 bg-cyan-600"></span>
+              PROJECT DELIVERY PROCESS
+            </div>
+
+            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Transforming Monitoring Requirements into
+              <span class="block text-cyan-600">Data Systems Built for Long-Term Operation</span>
+            </h2>
+          </div>
+
+          <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            For engineering projects, industrial equipment, and research or testing applications,
+            we complete system design, deployment, commissioning, and ongoing support based on the
+            real-world environment and project objectives.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            deliverySteps.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-7 transition hover:border-cyan-300">
+                <div class="text-sm font-medium text-cyan-700">{item.no}</div>
+
+                <h3 class="mt-8 text-2xl font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Solution CTA ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-slate-50 px-6 py-20 text-slate-900 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="overflow-hidden rounded-3xl border border-cyan-100 bg-white shadow-[0_20px_60px_rgba(8,145,178,0.08)]">
+          <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:p-14">
+
+            <div>
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                REQUEST PROJECT CONSULTATION
+              </div>
+
+              <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+                Have a Specific Monitoring Project?
+                <span class="block text-cyan-600">Let Our Technical Team Help Define the Right Solution.</span>
+              </h2>
+
+              <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                Share your project type, monitored assets, site photos or drawings, installation environment,
+                anticipated monitoring scope, and data requirements. Based on this information, we can provide
+                product selection and deployment recommendations.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+              <div class="text-sm font-medium text-slate-900">
+                Information to Provide
+              </div>
+
+              <div class="mt-5 grid gap-3 text-sm sm:grid-cols-2">
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Project type and monitoring objectives
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Drawings, site photos, or floor plans
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Installation environment and construction constraints
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Data and alert requirements
+                </div>
+              </div>
+
+              <a
+                href="/contact#contact"
+                class="mt-7 inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
+              >
+                Contact the Technical Team
+                <Icon name="mdi:arrow-up-right" width="17" height="17" />
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

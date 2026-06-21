@@ -1,0 +1,114 @@
+---
+import { Icon } from 'astro-icon/components';
+import logoImg from '../assets/gangmeng-logo.png';
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: '首页', href: '/' },
+  { label: '产品中心', href: '/products' },
+  { label: '应用领域', href: '/applications' },
+  { label: '解决方案', href: '/solutions' },
+  { label: '关于我们', href: '/about' },
+  { label: '联系我们', href: '/contact' },
+];
+
+const isActive = (href: string) => {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+};
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl"
+>
+  <div class="navbar mx-auto h-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- 左侧 Logo -->
+    <div class="navbar-start">
+      <div class="dropdown">
+        <button
+          type="button"
+          tabindex="0"
+          aria-label="打开导航菜单"
+          class="btn btn-ghost btn-sm mr-1 lg:hidden"
+        >
+          <Icon name="mdi:menu" width="22" height="22" />
+        </button>
+
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content z-50 mt-3 w-56 rounded-xl border border-slate-200 bg-white p-2 shadow-xl"
+        >
+          {
+            navItems.map((item) => (
+                            <li>
+                <a
+                  href={item.href}
+                  class={isActive(item.href) ? 'font-semibold text-cyan-700' : 'text-slate-700'}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <a
+        href="/"
+        class="flex items-center gap-2.5 text-lg font-semibold tracking-tight text-slate-900 transition hover:text-cyan-700 sm:text-xl"
+      >
+        <img
+          src={logoImg.src}
+          alt="港盟传感"
+          class="h-8 w-auto object-contain"
+        />
+        <span>港盟传感</span>
+      </a>
+    </div>
+
+    <!-- 桌面端菜单 -->
+    <nav class="navbar-center hidden lg:flex" aria-label="主导航">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                class:list={{
+                  'relative font-semibold text-cyan-700 after:absolute after:bottom-1 after:left-1/2 after:h-[2px] after:w-5 after:-translate-x-1/2 after:rounded-full after:bg-cyan-600':
+                    isActive(item.href),
+                  'font-medium text-slate-600 hover:bg-transparent hover:text-cyan-700':
+                    !isActive(item.href),
+                }}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <!-- 右侧操作 -->
+    <div class="navbar-end gap-1.5">
+      <a
+        href="/en"
+        class="btn btn-ghost btn-sm hidden text-slate-600 hover:bg-slate-100 hover:text-cyan-700 sm:inline-flex"
+      >
+        <Icon name="mdi:translate" width="18" height="18" />
+        EN
+      </a>
+      <a
+        href="/contact#contact"
+        class="btn btn-primary btn-sm hidden rounded-full px-4 sm:inline-flex"
+      >
+        获取方案
+        <Icon name="mdi:arrow-up-right" width="16" height="16" />
+      </a>
+    </div>
+
+  </div>
+</header>

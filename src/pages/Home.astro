@@ -1,0 +1,625 @@
+---
+import { Icon } from "astro-icon/components";
+import SolutionApp1 from "../assets/application/solution1.jpg";
+const applications = [ { no: '01', title: '桥梁与建筑结构', desc: '桥梁、楼宇、大跨度结构、地基基础及关键受力构件的长期安全监测。', tags: ['应变', '位移', '倾角', '振动'], href: '/applications/structure-monitoring', }, { no: '02', title: '隧道与轨道交通', desc: '隧道围岩、衬砌、沉降、轨道振动及沿线结构状态的连续感知。', tags: ['沉降', '裂缝', '振动', '入侵'], href: '/applications/tunnel-rail', }, { no: '03', title: '电力电缆与能源管道', desc: '电缆温升、接头过热、管道泄漏及第三方施工入侵的实时预警。', tags: ['DTS', 'DAS', '温度', '泄漏'], href: '/applications/energy-pipeline', }, { no: '04', title: '风电与新能源', desc: '风机塔筒、叶片、基础结构及新能源场站设备运行状态监测。', tags: ['载荷', '振动', '温度', '疲劳'], href: '/applications/wind-power', }, { no: '05', title: '工业设备与智能制造', desc: '关键机组、储罐、压力容器、生产线及大型设备的状态诊断。', tags: ['振动', '温度', '压力', '状态诊断'], href: '/applications/industrial', }, { no: '06', title: '农业设施与冷链仓储', desc: '冷库、植物工厂、种子库、培养仓及农业环境的精细化温度监控。', tags: ['冷链', '温度', '环境', '预警'], href: '/applications/agriculture', }, ];
+
+const advantages = [ { no: '01', title: '自研自产', desc: '覆盖传感器、解调主机、分布式监测设备及软件平台，保障产品迭代与供货稳定性。', }, { no: '02', title: '支持定制开发', desc: '可根据监测对象、安装环境、量程精度及通信方式，提供传感器与系统级定制方案。', }, { no: '03', title: '项目级技术服务', desc: '从前期选型、点位设计到安装指导、系统调试及后期运维，提供全流程技术支持。', }, { no: '04', title: '成本与交付优势', desc: '依托自主研发与制造能力，为批量采购、OEM/ODM 与工程项目提供更具竞争力的交付方案。', }, ];
+
+
+const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与建筑结构健康监测', desc: '基于 FBG 应变、温度、位移、倾角及加速度传感器，对关键受力构件、跨中区域、支座及整体结构状态进行长期监测。', image: '/images/solution-bridge.jpg', tags: ['FBG 应变', '位移监测', '振动监测'], href: '/solutions/bridge-structure', }, { no: '02', category: 'ENERGY SECURITY', title: '电力电缆与能源管道监测', desc: '通过 DTS 分布式测温与 DAS 分布式声波技术，实现电缆温升、异常热点、管道泄漏及第三方入侵的连续监测与预警。', image: '/images/solution-energy.jpg', tags: ['DTS 测温', 'DAS 声波', '泄漏预警'], href: '/solutions/energy-pipeline', }, { no: '03', category: 'AGRICULTURAL ENVIRONMENT', title: '农业设施与冷链环境监测', desc: '面向冷库、植物工厂、种子库、培养仓及机房等场景，构建多区域、高密度、可追溯的温度环境监测系统。', image: '/images/solution-agriculture.jpg', tags: ['环境温度', '冷链监测', '异常告警'], href: '/solutions/agriculture-coldchain', }, ];
+
+
+---
+
+<!-- ===== Hero 区域 ===== -->
+
+<section class="relative overflow-hidden border-b border-dashed border-slate-300/70 bg-white text-slate-900">
+  <div class="relative mx-auto flex max-w-[1360px] items-center px-6 py-16 lg:min-h-[760px] lg:px-8 lg:py-16">
+    <div class="grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-12">
+
+      <!-- 左侧文案 -->
+      <div class="max-w-2xl">
+        <div class="mb-5 flex items-center gap-3 text-sm font-medium text-cyan-700">
+          <span class="h-px w-8 bg-cyan-600"></span>
+          光纤传感器与智能监测系统制造商
+        </div>
+
+        <h1 class="text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
+          让每一根光纤
+          <span class="block text-cyan-600">感知关键变化</span>
+        </h1>
+
+        <p class="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+          提供 FBG 光纤光栅传感器、DTS 分布式测温系统、
+          DAS 分布式声波监测系统及配套采集分析平台，
+          为结构安全、能源设施和工业设备提供可靠监测数据。
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/products" class="btn btn-primary btn-lg">
+            查看产品中心
+            <Icon name="mdi:arrow-right" width="18" height="18" />
+          </a>
+
+          <a
+            href="/contact"
+            class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white"
+          >
+            获取技术方案
+          </a>
+        </div>
+
+        <!-- 产品标签 -->
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-slate-200 pt-6">
+          <div>
+            <div class="text-lg font-semibold text-slate-900">FBG</div>
+            <div class="mt-1 text-sm text-slate-500">光纤光栅传感器</div>
+          </div>
+
+          <div>
+            <div class="text-lg font-semibold text-slate-900">DTS</div>
+            <div class="mt-1 text-sm text-slate-500">分布式温度监测</div>
+          </div>
+
+          <div>
+            <div class="text-lg font-semibold text-slate-900">DAS</div>
+            <div class="mt-1 text-sm text-slate-500">分布式声波监测</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧产品视觉 -->
+      <div class="relative">
+        <div class="relative overflow-hidden rounded-2xl bg-slate-100">
+          <img
+            src={SolutionApp1.src}
+            alt="港盟传感光纤传感监测系统"
+            class="h-[320px] w-full object-cover sm:h-[400px] lg:h-[470px]"
+          />
+
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/75 to-transparent px-6 pb-6 pt-20 text-white">
+            <div class="text-sm text-slate-300">Fiber Sensing System</div>
+            <div class="mt-1 text-xl font-semibold">
+              光纤传感监测与数据分析平台
+            </div>
+          </div>
+        </div>
+
+        <!-- 应用领域卡片 -->
+        <div class="absolute -bottom-4 -left-4 hidden rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-lg lg:block">
+          <div class="text-xs text-slate-500">应用领域</div>
+          <div class="mt-1 text-sm font-semibold text-slate-800">
+            基建 · 能源 · 工业 · 农业
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ===== 核心产品矩阵 ===== -->
+<section
+  id="products"
+  class="border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- 标题区域 -->
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+        <span class="h-px w-8 bg-cyan-600"></span>
+        核心产品矩阵
+      </div>
+
+      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+        从单点传感到全域监测
+      </h2>
+
+      <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+        覆盖应变、温度、振动、声波等关键监测参数，
+        为结构安全、能源设施及工业设备提供可靠感知能力。
+      </p>
+    </div>
+
+    <!-- 产品卡片 -->
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      <!-- FBG -->
+      <a
+        href="/products/fbg"
+        class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+      >
+        <div>
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+            <Icon
+              name="mdi:chart-timeline-variant"
+              width="25"
+              height="25"
+            />
+          </div>
+
+          <div class="mt-8 text-sm font-medium text-cyan-700">01 / FBG</div>
+
+          <h3 class="mt-3 text-2xl font-semibold tracking-tight">
+            光纤光栅传感器
+          </h3>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            应变、温度、位移、压力、倾角、裂缝及加速度等多参数光纤传感产品。
+          </p>
+        </div>
+
+        <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
+          <span class="text-sm font-medium text-slate-500">
+            单点高精度监测
+          </span>
+
+          <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+            →
+          </span>
+        </div>
+      </a>
+
+      <!-- DTS -->
+      <a
+        href="/products/dts"
+        class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+      >
+        <div>
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+            <Icon
+              name="mdi:thermometer-lines"
+              width="25"
+              height="25"
+            />
+          </div>
+
+          <div class="mt-8 text-sm font-medium text-cyan-700">02 / DTS</div>
+
+          <h3 class="mt-3 text-2xl font-semibold tracking-tight">
+            分布式测温系统
+          </h3>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            基于光纤连续测温技术，实现长距离、多区域、高密度温度监测与异常预警。
+          </p>
+        </div>
+
+        <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
+          <span class="text-sm font-medium text-slate-500">
+            连续温度感知
+          </span>
+
+          <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+            →
+          </span>
+        </div>
+      </a>
+
+      <!-- DAS -->
+      <a
+        href="/products/das"
+        class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+      >
+        <div>
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+            <Icon name="mdi:waveform" width="25" height="25" />
+          </div>
+
+          <div class="mt-8 text-sm font-medium text-cyan-700">03 / DAS</div>
+
+          <h3 class="mt-3 text-2xl font-semibold tracking-tight">
+            分布式声波监测系统
+          </h3>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            实时感知振动、入侵、泄漏与设备运行状态，适用于长距离分布式安全监测。
+          </p>
+        </div>
+
+        <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
+          <span class="text-sm font-medium text-slate-500">
+            振动与声波感知
+          </span>
+
+          <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+            →
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <!-- 底部入口 -->
+    <div class="mt-10 flex justify-end">
+      <a
+        href="/products"
+        class="inline-flex items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+      >
+        查看全部产品
+        <Icon name="mdi:arrow-right" width="18" height="18" />
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ===== 应用领域 ===== -->
+<section
+  id="applications"
+  class="border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- 标题 -->
+    <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+          <span class="h-px w-8 bg-cyan-600"></span>
+          应用领域
+        </div>
+
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          为关键场景提供持续感知
+        </h2>
+
+        <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+          从结构安全到能源运维，从工业设备到农业设施，
+          以光纤传感技术为不同场景提供可靠、连续的数据支撑。
+        </p>
+      </div>
+
+      <a
+        href="/applications"
+        class="group inline-flex w-fit items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+      >
+        查看全部应用
+        <span class="text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+
+    <!-- 应用卡片 -->
+    <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        applications.map((item) => (
+          <a
+            href={item.href}
+            class="group relative min-h-[260px] overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+          >
+            <!-- 编号 -->
+            <div class="flex items-start justify-between">
+              <span class="text-sm font-medium text-cyan-700">{item.no}</span>
+
+              <span class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition group-hover:border-cyan-500 group-hover:bg-cyan-600 group-hover:text-white">
+                →
+              </span>
+            </div>
+
+            <h3 class="mt-10 text-2xl font-semibold tracking-tight text-slate-900">
+              {item.title}
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-600">
+              {item.desc}
+            </p>
+
+            <div class="mt-7 flex flex-wrap gap-2">
+              {
+                item.tags.map((tag) => (
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                    {tag}
+                  </span>
+                ))
+              }
+            </div>
+
+            <!-- Hover 装饰光 -->
+            <div class="pointer-events-none absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-cyan-300/0 blur-3xl transition duration-500 group-hover:bg-cyan-300/20"></div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== 为什么选择港盟传感 ===== -->
+<section
+  id="advantages"
+  class="border-b border-dashed border-slate-200 bg-slate-950 px-6 py-24 text-white lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- 标题 -->
+    <div class="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
+      <div>
+        <div class="flex items-center gap-3 text-sm font-medium text-cyan-300">
+          <span class="h-px w-8 bg-cyan-300"></span>
+          为什么选择港盟传感
+        </div>
+
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          不只是提供传感器
+          <span class="block text-cyan-300">更提供可落地的监测能力</span>
+        </h2>
+      </div>
+
+      <p class="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+        面向科研、工业及工程监测场景，港盟传感以产品研发、系统集成和现场服务能力，
+        帮助客户将监测需求转化为长期稳定运行的数据系统。
+      </p>
+    </div>
+
+    <!-- 优势列表 -->
+    <div class="mt-16 border-t border-white/10">
+      {
+        advantages.map((item) => (
+          <div class="group grid gap-5 border-b border-white/10 py-8 transition sm:grid-cols-[80px_1fr_1.2fr_40px] sm:items-center">
+            <div class="text-sm font-medium text-cyan-300">{item.no}</div>
+
+            <h3 class="text-2xl font-semibold tracking-tight text-white">
+              {item.title}
+            </h3>
+
+            <p class="text-sm leading-7 text-slate-400 sm:text-base">
+              {item.desc}
+            </p>
+
+            <div class="text-xl text-slate-500 transition duration-300 group-hover:translate-x-1 group-hover:text-cyan-300">
+              →
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- 底部 CTA -->
+    <div class="mt-12 flex flex-col justify-between gap-6 rounded-2xl border border-white/10 bg-white/5 p-7 sm:flex-row sm:items-center">
+      <div>
+        <div class="text-lg font-semibold text-white">
+          有具体项目需求？
+        </div>
+        <p class="mt-2 text-sm text-slate-400">
+          获取产品选型建议、部署思路与系统方案支持。
+        </p>
+      </div>
+
+      <a
+        href="/contact"
+        class="inline-flex w-fit items-center gap-3 rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
+      >
+        联系技术团队
+        <span class="text-lg">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ===== 典型解决方案 ===== -->
+<section
+  id="solutions"
+  class="border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- 标题区域 -->
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+          <span class="h-px w-8 bg-cyan-600"></span>
+          典型解决方案
+        </div>
+
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          面向关键场景的
+          <span class="block text-cyan-600">光纤感知系统设计</span>
+        </h2>
+
+        <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+          从传感器选型、监测点位设计到数据采集、平台分析与告警联动，
+          为不同应用场景提供可落地的光纤监测解决方案。
+        </p>
+      </div>
+
+      <a
+        href="/solutions"
+        class="group inline-flex w-fit items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+      >
+        查看全部解决方案
+        <span class="text-lg transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
+      </a>
+    </div>
+
+    <!-- 解决方案卡片 -->
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {
+        solutions.map((item) => (
+          <a
+            href={item.href}
+            class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+          >
+            <!-- 图片区域 -->
+            <div class="relative h-60 overflow-hidden bg-slate-200">
+              <img
+                src={item.image}
+                alt={item.title}
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-transparent"></div>
+
+              <div class="absolute bottom-5 left-6">
+                <div class="text-xs font-medium tracking-[0.14em] text-cyan-200">
+                  {item.category}
+                </div>
+              </div>
+
+              <div class="absolute right-6 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-sm font-semibold text-slate-800 backdrop-blur">
+                {item.no}
+              </div>
+            </div>
+
+            <!-- 内容区域 -->
+            <div class="p-7">
+              <h3 class="text-2xl font-semibold tracking-tight text-slate-900">
+                {item.title}
+              </h3>
+
+              <p class="mt-4 text-sm leading-7 text-slate-600">
+                {item.desc}
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                {
+                  item.tags.map((tag) => (
+                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                      {tag}
+                    </span>
+                  ))
+                }
+              </div>
+
+              <div class="mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
+                <span class="text-sm font-medium text-slate-500">
+                  查看方案详情
+                </span>
+
+                <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- 右侧直接联系入口，无需后端 -->
+<div class="flex bg-slate-50 p-7 sm:p-10 lg:p-12">
+  <div class="mx-auto w-full max-w-xl">
+
+    <!-- 标题 -->
+    <div class="text-center">
+      <div class="text-sm font-medium text-cyan-700">快速咨询</div>
+
+      <h3 class="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+        与技术团队直接沟通
+      </h3>
+
+      <p class="mx-auto mt-3 max-w-md text-sm leading-7 text-slate-500">
+        产品选型、项目部署、OEM / ODM 定制、海外交付及监测系统方案咨询。
+      </p>
+    </div>
+
+    <!-- 联系方式：2 × 2 紧凑布局 -->
+    <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <a
+        href="tel:+8613800000000"
+        class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-900/5"
+      >
+        <div class="flex items-center justify-between">
+          <span class="text-xs tracking-[0.12em] text-slate-400 uppercase">Phone</span>
+          <span class="text-cyan-700 transition-transform group-hover:translate-x-1">→</span>
+        </div>
+
+        <div class="mt-4 text-base font-semibold text-slate-900">
+          +86 138 0000 0000
+        </div>
+
+        <div class="mt-1 text-sm text-slate-500">
+          电话咨询
+        </div>
+      </a>
+
+      <a
+        href="mailto:sales@example.com"
+        class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-900/5"
+      >
+        <div class="flex items-center justify-between">
+          <span class="text-xs tracking-[0.12em] text-slate-400 uppercase">Email</span>
+          <span class="text-cyan-700 transition-transform group-hover:translate-x-1">→</span>
+        </div>
+
+        <div class="mt-4 break-all text-base font-semibold text-slate-900">
+          sales@example.com
+        </div>
+
+        <div class="mt-1 text-sm text-slate-500">
+          邮件咨询
+        </div>
+      </a>
+
+      <a
+        href="https://wa.me/8613800000000"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group rounded-2xl bg-slate-900 p-5 text-white transition hover:-translate-y-0.5 hover:bg-cyan-700 hover:shadow-lg"
+      >
+        <div class="flex items-center justify-between">
+          <span class="text-xs tracking-[0.12em] text-slate-400 uppercase group-hover:text-cyan-100">
+            WhatsApp
+          </span>
+          <span class="text-cyan-300 transition-transform group-hover:translate-x-1 group-hover:text-white">→</span>
+        </div>
+
+        <div class="mt-4 text-base font-semibold">
+          在线咨询产品与方案
+        </div>
+
+        <div class="mt-1 text-sm text-slate-400 group-hover:text-cyan-100">
+          海外客户快速沟通
+        </div>
+      </a>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-5">
+        <div class="text-xs tracking-[0.12em] text-slate-400 uppercase">
+          Service Scope
+        </div>
+
+        <div class="mt-4 text-base font-semibold text-slate-900">
+          项目级技术支持
+        </div>
+
+        <div class="mt-1 text-sm leading-6 text-slate-500">
+          产品选型 · 安装部署 · 系统调试 · 海外交付
+        </div>
+      </div>
+    </div>
+
+    <!-- 微信二维码：横向紧凑卡 -->
+    <div class="mt-4 flex items-center gap-5 rounded-2xl border border-dashed border-slate-300 bg-white p-5">
+      <img
+        src="/images/wechat-qr.png"
+        alt="港盟传感微信咨询二维码"
+        class="h-20 w-20 shrink-0 rounded-xl object-cover"
+      />
+
+      <div>
+        <div class="font-semibold text-slate-900">微信扫码咨询</div>
+        <p class="mt-2 text-sm leading-6 text-slate-500">
+          添加技术顾问，获取产品目录、参数资料及项目建议。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,534 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+// 保留你原本的 Layout import
+
+const solutions = [
+  {
+    id: 'bridge-structure',
+    no: '01',
+    category: 'STRUCTURAL SAFETY',
+    title: '桥梁与建筑结构健康监测方案',
+    desc: '针对桥梁、大跨度结构、楼宇及关键受力构件，构建从单点应变感知到整体结构状态分析的长期监测系统。',
+    image: '/images/solutions/bridge-structure.jpg',
+    targets: ['关键受力构件', '跨中与支座', '沉降与倾斜', '振动响应'],
+    technologies: ['FBG 应变计', '位移传感器', '倾角仪', '加速度计', '静力水准仪'],
+    deliverables: ['点位部署设计', '主机与光缆配置', '监测平台', '阈值预警'],
+    href: '/solutions/bridge-structure',
+  },
+  {
+    id: 'energy-pipeline',
+    no: '02',
+    category: 'ENERGY SECURITY',
+    title: '电力电缆与能源管道监测方案',
+    desc: '面向电缆隧道、综合管廊、油气管道及长距离输送设施，实现温升、热点、泄漏、入侵与异常施工活动的连续监测。',
+    image: '/images/solutions/energy-pipeline.jpg',
+    targets: ['温升与热点', '泄漏风险', '第三方施工', '沿线入侵'],
+    technologies: ['DTS 分布式测温', 'DAS 分布式声波', 'FBG 温度', '远程告警平台'],
+    deliverables: ['光缆路径设计', '主机通道配置', '分区定位', '告警联动'],
+    href: '/solutions/energy-pipeline',
+  },
+  {
+    id: 'industrial-equipment',
+    no: '03',
+    category: 'INDUSTRIAL MONITORING',
+    title: '工业设备状态监测方案',
+    desc: '针对关键机组、储罐、压力容器、生产线与大型旋转设备，提供温度、振动、载荷及结构状态的综合监测。',
+    image: '/images/solutions/industrial-equipment.jpg',
+    targets: ['关键机组', '储罐与容器', '设备振动', '温度与载荷'],
+    technologies: ['FBG 温度', 'FBG 加速度', 'FBG 应变', 'DAS', '数据分析平台'],
+    deliverables: ['设备测点设计', '传感器安装方案', '边缘采集', '趋势诊断'],
+    href: '/solutions/industrial-equipment',
+  },
+  {
+    id: 'agriculture-coldchain',
+    no: '04',
+    category: 'AGRICULTURAL ENVIRONMENT',
+    title: '农业设施与冷链环境监测方案',
+    desc: '适用于冷库、植物工厂、种子库、培养仓、实验室及机房等场景，建立多区域、可追溯的温度环境监测体系。',
+    image: '/images/solutions/agriculture-coldchain.jpg',
+    targets: ['冷库温区', '培养环境', '设备机房', '温度异常'],
+    technologies: ['DTS 分布式测温', 'FBG 温度', '多点采集主机', '远程预警平台'],
+    deliverables: ['分区监测设计', '房间与光缆规划', '温度告警', '历史报表'],
+    href: '/solutions/agriculture-coldchain',
+  },
+];
+
+const architectureLayers = [
+  {
+    no: '01',
+    title: '感知层',
+    desc: '通过 FBG、DTS、DAS 及配套传感器获取应变、温度、位移、振动、声波等原始数据。',
+    items: ['FBG 传感器', '分布式光纤', '配套光缆', '现场安装组件'],
+  },
+  {
+    no: '02',
+    title: '采集层',
+    desc: '使用解调仪、DTS/DAS 主机与边缘采集设备，实现多通道信号采集、数据处理与通信传输。',
+    items: ['光纤解调仪', 'DTS / DAS 主机', '边缘采集', '网络通信'],
+  },
+  {
+    no: '03',
+    title: '平台层',
+    desc: '通过监测平台集中展示数据、趋势、设备状态、报警记录及项目运行情况。',
+    items: ['实时数据', '趋势分析', '可视化大屏', '报表管理'],
+  },
+  {
+    no: '04',
+    title: '预警层',
+    desc: '根据阈值、速率、趋势与事件识别逻辑，实现分级告警和后续处置支撑。',
+    items: ['阈值预警', '趋势预警', '事件识别', '告警联动'],
+  },
+];
+
+const deliverySteps = [
+  {
+    no: '01',
+    title: '需求梳理',
+    desc: '明确监测对象、关键风险点、现场条件、数据要求与项目实施范围。',
+  },
+  {
+    no: '02',
+    title: '方案设计',
+    desc: '完成传感器选型、点位设计、光缆路径、主机配置及平台功能规划。',
+  },
+  {
+    no: '03',
+    title: '部署实施',
+    desc: '提供设备安装、传感器布设、系统调试、数据验证与基础培训支持。',
+  },
+  {
+    no: '04',
+    title: '运行维护',
+    desc: '支持远程查看、报警优化、数据分析、系统扩展与长期技术服务。',
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+
+    <!-- ===== Solutions Hero ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-white px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            解决方案
+          </div>
+
+          <h1 class="mt-5 text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
+            从感知需求到
+            <span class="block text-cyan-600">可落地监测系统</span>
+          </h1>
+
+          <p class="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+            港盟传感围绕不同场景的风险点、安装条件与数据目标，
+            将传感器、分布式主机、采集设备、监测平台及预警机制
+            组合为可实施、可扩展、可长期运行的光纤监测系统。
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#featured-solutions" class="btn btn-primary btn-lg">
+              查看典型方案
+              <Icon name="mdi:arrow-down" width="18" height="18" />
+            </a>
+
+            <a
+              href="/contact#contact"
+              class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white"
+            >
+              获取项目建议
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-slate-200 pt-6 text-sm text-slate-500">
+            <span>监测对象分析</span>
+            <span>系统方案设计</span>
+            <span>现场部署支持</span>
+          </div>
+        </div>
+
+        <!-- 右侧方案概览 -->
+        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-100 blur-3xl"></div>
+
+          <div class="relative">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-xs font-medium tracking-[0.14em] text-cyan-700">
+                  SOLUTION FRAMEWORK
+                </div>
+                <div class="mt-2 text-2xl font-semibold text-slate-900">
+                  光纤监测系统架构
+                </div>
+              </div>
+
+              <Icon
+                name="mdi:vector-polyline"
+                width="34"
+                height="34"
+                class="text-cyan-600"
+              />
+            </div>
+
+            <div class="mt-8 space-y-3">
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-sm font-semibold text-cyan-700">
+                  01
+                </span>
+                <div>
+                  <div class="font-medium text-slate-900">现场感知</div>
+                  <div class="mt-1 text-xs text-slate-500">
+                    传感器与分布式光纤获取关键参数
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-sm font-semibold text-cyan-700">
+                  02
+                </span>
+                <div>
+                  <div class="font-medium text-slate-900">数据采集</div>
+                  <div class="mt-1 text-xs text-slate-500">
+                    主机、解调仪与边缘设备完成数据处理
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-sm font-semibold text-cyan-700">
+                  03
+                </span>
+                <div>
+                  <div class="font-medium text-slate-900">平台预警</div>
+                  <div class="mt-1 text-xs text-slate-500">
+                    可视化展示、趋势分析与异常告警联动
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Sticky Navigation ===== -->
+    <div class="sticky top-16 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-6 py-4 text-sm lg:px-8">
+        <a href="#featured-solutions" class="whitespace-nowrap font-semibold text-cyan-700">
+          典型方案
+        </a>
+        <a href="#bridge-structure" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          结构健康监测
+        </a>
+        <a href="#energy-pipeline" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          能源与管道
+        </a>
+        <a href="#industrial-equipment" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          工业设备
+        </a>
+        <a href="#agriculture-coldchain" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          农业与冷链
+        </a>
+        <a href="#architecture" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          系统架构
+        </a>
+        <a href="#delivery" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          项目交付
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Featured Solutions ===== -->
+    <section
+      id="featured-solutions"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+              <span class="h-px w-8 bg-cyan-600"></span>
+              典型解决方案
+            </div>
+
+            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              围绕关键风险点
+              <span class="block text-cyan-600">进行系统化监测设计</span>
+            </h2>
+
+            <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+              方案内容可根据监测对象、现场条件、安装方式、监测周期和数据使用需求进行调整，
+              以下为常见应用方向的系统设计示例。
+            </p>
+          </div>
+
+          <a
+            href="/contact#contact"
+            class="group inline-flex w-fit items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+          >
+            获取定制化方案建议
+            <span class="text-lg transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          {
+            solutions.map((item) => (
+              <article
+                id={item.id}
+                class="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+              >
+                <a href={item.href} class="block">
+                  <div class="relative h-64 overflow-hidden bg-slate-200">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-6">
+                      <div class="text-xs font-medium tracking-[0.14em] text-cyan-200">
+                        {item.category}
+                      </div>
+                    </div>
+
+                    <div class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-sm font-semibold text-slate-800 backdrop-blur">
+                      {item.no}
+                    </div>
+                  </div>
+
+                  <div class="p-7">
+                    <h3 class="text-2xl font-semibold tracking-tight text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                      {item.desc}
+                    </p>
+
+                    <div class="mt-7 grid gap-6 sm:grid-cols-2">
+                      <div>
+                        <div class="text-xs font-medium tracking-[0.12em] text-slate-400">
+                          监测对象
+                        </div>
+
+                        <div class="mt-3 flex flex-wrap gap-2">
+                          {
+                            item.targets.map((tag) => (
+                              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                                {tag}
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="text-xs font-medium tracking-[0.12em] text-slate-400">
+                          推荐技术
+                        </div>
+
+                        <div class="mt-3 flex flex-wrap gap-2">
+                          {
+                            item.technologies.map((tag) => (
+                              <span class="rounded-full bg-cyan-50 px-3 py-1 text-xs text-cyan-700">
+                                {tag}
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-7 border-t border-slate-100 pt-5">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <div class="text-xs text-slate-400">方案内容</div>
+                          <div class="mt-1 text-sm font-medium text-slate-700">
+                            {item.deliverables.join(' · ')}
+                          </div>
+                        </div>
+
+                        <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== System Architecture ===== -->
+    <section
+      id="architecture"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            系统架构
+          </div>
+
+          <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            从前端感知到平台预警
+          </h2>
+
+          <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            监测方案不只是安装传感器，还需要完整考虑数据采集、通信、平台展示、
+            告警逻辑与后续维护，确保系统长期稳定运行。
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            architectureLayers.map((item) => (
+              <div class="min-h-[320px] rounded-2xl border border-slate-200 bg-slate-50 p-7">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium text-cyan-700">{item.no}</span>
+                  <span class="text-xs tracking-[0.12em] text-slate-400">SYSTEM LAYER</span>
+                </div>
+
+                <h3 class="mt-10 text-2xl font-semibold tracking-tight text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  {
+                    item.items.map((tag) => (
+                      <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+                        {tag}
+                      </span>
+                    ))
+                  }
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Delivery Process ===== -->
+    <section
+      id="delivery"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div>
+            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+              <span class="h-px w-8 bg-cyan-600"></span>
+              项目交付流程
+            </div>
+
+            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              把监测需求转化为
+              <span class="block text-cyan-600">长期可运行的数据系统</span>
+            </h2>
+          </div>
+
+          <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            面向工程项目、工业设备与科研测试场景，
+            按照实际环境和项目目标完成方案设计、部署调试与后续服务。
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            deliverySteps.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-7 transition hover:border-cyan-300">
+                <div class="text-sm font-medium text-cyan-700">{item.no}</div>
+
+                <h3 class="mt-8 text-2xl font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Solution CTA ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-slate-50 px-6 py-20 text-slate-900 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="overflow-hidden rounded-3xl border border-cyan-100 bg-white shadow-[0_20px_60px_rgba(8,145,178,0.08)]">
+          <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:p-14">
+
+            <div>
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                获取项目建议
+              </div>
+
+              <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+                有具体监测项目？
+                <span class="block text-cyan-600">让技术团队协助您梳理方案。</span>
+              </h2>
+
+              <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                您可提供项目类型、监测对象、现场照片或图纸、安装环境、
+                预计监测范围及数据需求，我们将据此提供产品选型与部署建议。
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+              <div class="text-sm font-medium text-slate-900">
+                建议提供的信息
+              </div>
+
+              <div class="mt-5 grid gap-3 text-sm sm:grid-cols-2">
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  项目类型与监测目标
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  图纸、现场照片或平面图
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  安装环境与施工条件
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  数据与预警需求
+                </div>
+              </div>
+
+              <a
+                href="/contact#contact"
+                class="mt-7 inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
+              >
+                联系技术团队
+                <Icon name="mdi:arrow-up-right" width="17" height="17" />
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+

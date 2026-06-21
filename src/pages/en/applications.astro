@@ -1,0 +1,519 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '@/layouts/en/Layout.astro';
+
+const applications = [
+  {
+    id: 'structure',
+    no: '01',
+    category: 'STRUCTURAL SAFETY',
+    title: 'Bridges & Building Structures',
+    desc: 'Long-term structural health monitoring and safety alert support for bridges, buildings, long-span structures, excavation works, and critical load-bearing components.',
+    image: '/images/applications/bridge-building.jpg',
+    monitoring: ['Strain', 'Displacement', 'Tilt', 'Vibration'],
+    technologies: ['FBG', 'Accelerometers', 'Hydrostatic Leveling'],
+    href: '/en/applications/structure-monitoring',
+  },
+  {
+    id: 'tunnel',
+    no: '02',
+    category: 'TUNNEL & RAIL',
+    title: 'Tunnels & Rail Transit',
+    desc: 'Continuous condition sensing for tunnel surrounding rock, linings, settlement, rail vibration, trackside structures, and perimeter environments.',
+    image: '/images/applications/tunnel-rail.jpg',
+    monitoring: ['Settlement', 'Cracks', 'Vibration', 'Intrusion'],
+    technologies: ['FBG', 'DAS', 'DTS'],
+    href: '/en/applications/tunnel-rail',
+  },
+  {
+    id: 'energy',
+    no: '03',
+    category: 'ENERGY SECURITY',
+    title: 'Power Cables & Energy Pipelines',
+    desc: 'Real-time monitoring and early warning for cable temperature rise, joint overheating, pipeline leakage, third-party construction activity, and abnormal events along the route.',
+    image: '/images/applications/energy-pipeline.jpg',
+    monitoring: ['Temperature', 'Hotspots', 'Leakage', 'Intrusion'],
+    technologies: ['DTS', 'DAS', 'FBG'],
+    href: '/en/applications/energy-pipeline',
+  },
+  {
+    id: 'wind',
+    no: '04',
+    category: 'RENEWABLE ENERGY',
+    title: 'Wind Power & Renewable Energy',
+    desc: 'Condition monitoring for wind turbine towers, blades, foundation structures, energy-storage facilities, and critical equipment in renewable energy sites.',
+    image: '/images/applications/wind-energy.jpg',
+    monitoring: ['Load', 'Vibration', 'Temperature', 'Fatigue'],
+    technologies: ['FBG', 'Accelerometers', 'DTS'],
+    href: '/en/applications/wind-power',
+  },
+  {
+    id: 'industrial',
+    no: '05',
+    category: 'INDUSTRIAL MONITORING',
+    title: 'Industrial Equipment & Smart Manufacturing',
+    desc: 'Temperature, vibration, pressure, and structural condition monitoring for critical machinery, storage tanks, pressure vessels, production lines, and large industrial equipment.',
+    image: '/images/applications/industrial-equipment.jpg',
+    monitoring: ['Vibration', 'Temperature', 'Pressure', 'Condition Diagnostics'],
+    technologies: ['FBG', 'DAS', 'Data Platform'],
+    href: '/en/applications/industrial',
+  },
+  {
+    id: 'agriculture',
+    no: '06',
+    category: 'AGRICULTURAL ENVIRONMENT',
+    title: 'Agricultural Facilities & Cold Chain Storage',
+    desc: 'Multi-zone, high-precision temperature monitoring for cold storage, plant factories, seed banks, cultivation chambers, laboratories, and agricultural environments.',
+    image: '/images/applications/agriculture-coldchain.jpg',
+    monitoring: ['Cold Chain', 'Temperature', 'Environment', 'Alerts'],
+    technologies: ['DTS', 'FBG Temperature', 'Platform Alerts'],
+    href: '/en/applications/agriculture',
+  },
+];
+
+const monitoringCapabilities = [
+  {
+    no: '01',
+    title: 'Structural Condition Sensing',
+    desc: 'Monitoring of key structural parameters including strain, displacement, tilt, settlement, cracking, vibration, and load.',
+    tags: ['Bridges', 'Buildings', 'Tunnels', 'Wind Turbines'],
+  },
+  {
+    no: '02',
+    title: 'Temperature & Thermal Risk Monitoring',
+    desc: 'Long-distance continuous temperature measurement, abnormal hotspot identification, temperature-rise trend analysis, and graded early warning.',
+    tags: ['Cables', 'Pipelines', 'Cold Storage', 'Warehouses'],
+  },
+  {
+    no: '03',
+    title: 'Vibration & Acoustic Event Detection',
+    desc: 'Detection of intrusion, leakage, mechanical vibration, construction disturbance, and abnormal equipment operation.',
+    tags: ['Perimeters', 'Pipelines', 'Railways', 'Industrial Equipment'],
+  },
+];
+
+const deliverySteps = [
+  {
+    no: '01',
+    title: 'Site Assessment',
+    desc: 'Define the monitoring object, risk points, installation environment, data requirements, and operating period.',
+  },
+  {
+    no: '02',
+    title: 'System Design',
+    desc: 'Complete sensor selection, monitoring-point deployment, fiber routing, host configuration, and platform architecture design.',
+  },
+  {
+    no: '03',
+    title: 'Installation & Commissioning',
+    desc: 'Provide onsite installation guidance, system integration, data validation, and alarm-threshold configuration support.',
+  },
+  {
+    no: '04',
+    title: 'Ongoing Operation & Maintenance',
+    desc: 'Support remote data access, trend analysis, anomaly alerts, and future system expansion.',
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+
+    <!-- ===== Applications Hero ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-white px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            Applications
+          </div>
+
+          <h1 class="mt-5 text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
+            Fiber Sensing for
+            <span class="block text-cyan-600">Critical Applications</span>
+          </h1>
+
+          <p class="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+            For critical applications including structural safety, energy facilities,
+            industrial equipment, agricultural environments, and rail transit,
+            Gangmeng Sensor provides complete monitoring capabilities from sensor
+            selection and system design to data platforms and alert integration.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#industries" class="btn btn-primary btn-lg">
+              Explore Applications
+              <Icon name="mdi:arrow-down" width="18" height="18" />
+            </a>
+
+            <a
+              href="/en/contact#contact"
+              class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white"
+            >
+              Request an Industry Solution
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-slate-200 pt-6 text-sm text-slate-500">
+            <span>Multi-technology Sensor Integration</span>
+            <span>Project-Level Deployment Design</span>
+            <span>Data Platform & Alert Integration</span>
+          </div>
+        </div>
+
+        <!-- Application Overview -->
+        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-100 blur-3xl"></div>
+
+          <div class="relative">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-xs font-medium tracking-[0.14em] text-cyan-700">
+                  APPLICATION MATRIX
+                </div>
+                <div class="mt-2 text-2xl font-semibold text-slate-900">
+                  Applications × Sensing Technologies
+                </div>
+              </div>
+
+              <span class="rounded-full bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700">
+                FBG · DTS · DAS
+              </span>
+            </div>
+
+            <div class="mt-7 grid grid-cols-2 gap-3">
+              <div class="rounded-2xl border border-slate-200 bg-white p-5">
+                <div class="text-sm font-semibold text-slate-900">Structural Safety</div>
+                <div class="mt-2 text-xs leading-6 text-slate-500">
+                  Bridges, Buildings, Tunnels, Excavations
+                </div>
+                <div class="mt-5 text-sm font-medium text-cyan-700">FBG Monitoring</div>
+              </div>
+
+              <div class="rounded-2xl bg-slate-900 p-5 text-white">
+                <div class="text-sm font-semibold">Energy Security</div>
+                <div class="mt-2 text-xs leading-6 text-slate-400">
+                  Cables, Pipelines, Energy Storage, Perimeters
+                </div>
+                <div class="mt-5 text-sm font-medium text-cyan-300">DTS / DAS</div>
+              </div>
+
+              <div class="rounded-2xl bg-cyan-700 p-5 text-white">
+                <div class="text-sm font-semibold">Industrial Equipment</div>
+                <div class="mt-2 text-xs leading-6 text-cyan-100/80">
+                  Machinery, Storage Tanks, Production Lines, Vessels
+                </div>
+                <div class="mt-5 text-sm font-medium text-cyan-100">Condition Monitoring</div>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 bg-white p-5">
+                <div class="text-sm font-semibold text-slate-900">Agricultural Environment</div>
+                <div class="mt-2 text-xs leading-6 text-slate-500">
+                  Cold Storage, Seed Banks, Plant Factories
+                </div>
+                <div class="mt-5 text-sm font-medium text-cyan-700">Temperature Sensing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Industry Anchor Navigation ===== -->
+    <div class="sticky top-16 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-6 py-4 text-sm lg:px-8">
+        <a href="#industries" class="whitespace-nowrap font-semibold text-cyan-700">
+          All Applications
+        </a>
+        <a href="#structure" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Bridges & Buildings
+        </a>
+        <a href="#tunnel" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Tunnels & Rail
+        </a>
+        <a href="#energy" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Energy & Power
+        </a>
+        <a href="#wind" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Wind & Renewable Energy
+        </a>
+        <a href="#industrial" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Industrial Equipment
+        </a>
+        <a href="#agriculture" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
+          Agriculture & Cold Chain
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Industry Applications ===== -->
+    <section
+      id="industries"
+      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+    >
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+              <span class="h-px w-8 bg-cyan-600"></span>
+              Industry Applications
+            </div>
+
+            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Continuous Sensing for
+              <span class="block text-cyan-600">Critical Assets and Environments</span>
+            </h2>
+
+            <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+              Based on risk points, environmental conditions, and data requirements
+              across different scenarios, we combine FBG, DTS, DAS, and monitoring
+              platforms into system solutions tailored to engineering needs.
+            </p>
+          </div>
+
+          <a
+            href="/en/contact#contact"
+            class="group inline-flex w-fit items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+          >
+            Discuss Your Industry Solution
+            <span class="text-lg transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {
+            applications.map((item) => (
+              <article
+                id={item.id}
+                class="group scroll-mt-28 overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+              >
+                <a href={item.href} class="block">
+                  <div class="relative h-56 overflow-hidden bg-slate-200">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-6">
+                      <div class="text-xs font-medium tracking-[0.14em] text-cyan-200">
+                        {item.category}
+                      </div>
+                    </div>
+
+                    <div class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-sm font-semibold text-slate-800 backdrop-blur">
+                      {item.no}
+                    </div>
+                  </div>
+
+                  <div class="p-7">
+                    <h3 class="text-2xl font-semibold tracking-tight text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                      {item.desc}
+                    </p>
+
+                    <div class="mt-6">
+                      <div class="text-xs font-medium tracking-[0.12em] text-slate-400">
+                        Monitoring Priorities
+                      </div>
+
+                      <div class="mt-3 flex flex-wrap gap-2">
+                        {
+                          item.monitoring.map((tag) => (
+                            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                              {tag}
+                            </span>
+                          ))
+                        }
+                      </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-slate-100 pt-5">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <div class="text-xs text-slate-400">Recommended Technologies</div>
+                          <div class="mt-1 text-sm font-medium text-cyan-700">
+                            {item.technologies.join(' · ')}
+                          </div>
+                        </div>
+
+                        <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Monitoring Capabilities ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            Monitoring Capabilities
+          </div>
+
+          <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            From Physical Changes
+            <span class="block text-cyan-600">to Actionable Data</span>
+          </h2>
+
+          <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            Monitoring needs vary by application. Starting from the monitoring target,
+            we coordinate sensors, acquisition equipment, communication methods,
+            and analytics platforms into an integrated system.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-3">
+          {
+            monitoringCapabilities.map((item) => (
+              <div class="min-h-[280px] rounded-2xl border border-slate-200 bg-slate-50 p-7">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium text-cyan-700">{item.no}</span>
+                  <span class="text-sm tracking-[0.12em] text-slate-400">MONITORING</span>
+                </div>
+
+                <h3 class="mt-10 text-2xl font-semibold tracking-tight text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  {
+                    item.tags.map((tag) => (
+                      <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+                        {tag}
+                      </span>
+                    ))
+                  }
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Project Delivery Process ===== -->
+    <section class="border-b border-dashed border-slate-800 bg-slate-950 px-6 py-24 text-white lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div>
+            <div class="flex items-center gap-3 text-sm font-medium text-cyan-300">
+              <span class="h-px w-8 bg-cyan-300"></span>
+              Project Delivery
+            </div>
+
+            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Starting from Application Needs
+              <span class="block text-cyan-300">Building Deployable Monitoring Systems</span>
+            </h2>
+          </div>
+
+          <p class="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+            For engineering projects, industrial operations, and research testing,
+            we provide systematic technical support from initial analysis through
+            long-term operation and maintenance.
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 xl:grid-cols-4">
+          {
+            deliverySteps.map((item) => (
+              <div class="bg-slate-950/80 p-7">
+                <div class="text-sm font-medium text-cyan-300">{item.no}</div>
+
+                <h3 class="mt-8 text-2xl font-semibold text-white">
+                  {item.title}
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-400">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Industry Solution CTA ===== -->
+    <section class="border-b border-dashed border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-slate-50 px-6 py-20 text-slate-900 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="overflow-hidden rounded-3xl border border-cyan-100 bg-white shadow-[0_20px_60px_rgba(8,145,178,0.08)]">
+          <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:p-14">
+
+            <div>
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                Industry-Specific Solution Design
+              </div>
+
+              <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+                What Monitoring Capabilities
+                <span class="block text-cyan-600">Does Your Project Need?</span>
+              </h2>
+
+              <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                Tell us about the monitored object, project location, site conditions,
+                key risk points, and data requirements. Our technical team will provide
+                sensor selection and system deployment recommendations.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+              <div class="text-sm font-medium text-slate-900">
+                Information You Can Provide
+              </div>
+
+              <div class="mt-5 grid gap-3 text-sm sm:grid-cols-2">
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Monitoring Object & Key Risks
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Installation Environment & Project Location
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Expected Monitoring Scope & Quantity
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+                  Data Platform & Alert Requirements
+                </div>
+              </div>
+
+              <a
+                href="/en/contact#contact"
+                class="mt-7 inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
+              >
+                Contact Our Technical Team
+                <Icon name="mdi:arrow-up-right" width="17" height="17" />
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
