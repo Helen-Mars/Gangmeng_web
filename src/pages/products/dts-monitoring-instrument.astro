@@ -1,0 +1,198 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+const specifications = [
+  ['产品名称', 'DTS 光纤分布式温度监测仪'],
+  ['产品系列', 'GM-DTS Series（可替换为实际型号）'],
+  ['监测原理', '基于光纤分布式温度感知技术，实现沿线连续温度采集与分析'],
+  ['监测对象', '温度分布、温升趋势、异常热点、火灾风险及温度环境变化'],
+  ['测温距离', '按设备型号、测温光缆及项目工况配置'],
+  ['空间分辨率', '按设备型号与测温距离配置'],
+  ['温度分辨率', '按设备型号、采样周期与现场环境配置'],
+  ['测温精度', '按设备型号、标定方式及现场工况配置'],
+  ['采样周期', '可按实时监测、常规巡检及项目预警需求配置'],
+  ['测温光缆', '单模测温光缆、铠装光缆、耐高温光缆或项目定制光缆'],
+  ['通道数量', '单通道 / 多通道可选，按型号配置'],
+  ['通信接口', 'Ethernet、RS485、4G / 5G（按型号配置）'],
+  ['平台对接', 'Web 平台、Modbus TCP、MQTT、HTTP API 或定制协议'],
+  ['部署方式', '机柜式、机房式、壁挂式或工程项目集成部署'],
+  ['应用环境', '电缆通道、管廊、冷库、仓储、工业现场及特殊环境'],
+];
+
+const features = [
+  {
+    icon: 'mdi:thermometer-lines',
+    title: '长距离连续测温',
+    desc: '以光纤作为连续传感介质，获取沿线各位置温度分布，实现大范围、高密度温度监测。',
+  },
+  {
+    icon: 'mdi:map-marker-radius',
+    title: '异常热点定位',
+    desc: '识别温升异常和热点区域，输出温度变化位置、趋势及时间信息，辅助快速排查。',
+  },
+  {
+    icon: 'mdi:chart-timeline-variant',
+    title: '温度趋势分析',
+    desc: '持续记录温度历史数据，支持温升速率、区域变化及长期趋势的分析与回溯。',
+  },
+  {
+    icon: 'mdi:alert-decagram-outline',
+    title: '多级告警联动',
+    desc: '支持温度阈值、温升速率、区域差异和组合规则告警，可联动平台及第三方系统。',
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+    <!-- 顶部产品展示：左图右参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a
+            href="/products#interrogators"
+            class="transition hover:text-cyan-700"
+          >
+            产品中心
+          </a>
+
+          <span>/</span>
+
+          <a
+            href="/products#interrogators"
+            class="transition hover:text-cyan-700"
+          >
+            光纤解调仪（监测仪）
+          </a>
+
+          <span>/</span>
+
+          <span class="text-slate-700">
+            DTS 光纤分布式温度监测仪
+          </span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧产品图 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/80 bg-white shadow-inner">
+                <div class="absolute bottom-[14%] h-8 w-[58%] rounded-full bg-slate-900/15 blur-2xl"></div>
+
+                <img
+                  src="/images/products/dts-monitoring-instrument-main.png"
+                  alt="DTS 光纤分布式温度监测仪"
+                  class="relative z-10 max-h-[68%] max-w-[80%] object-contain drop-shadow-[0_20px_22px_rgba(15,23,42,0.22)]"
+                />
+              </div>
+            </div>
+
+            <!-- 右侧技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                DTS MONITORING INSTRUMENT
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                DTS 光纤分布式温度监测仪
+              </h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                基于光纤分布式温度感知技术，连续获取沿线温度分布、温升趋势、
+                异常热点及区域温度变化信息，适用于电力电缆、能源管道、冷库仓储、
+                农业设施、工业设备与地下空间等场景。
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">
+                            {label}
+                          </th>
+
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">
+                            {value}
+                          </td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/contact#contact"
+                  class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
+                >
+                  获取 DTS 选型建议
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a
+                  href="/products#interrogators"
+                  class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+                >
+                  返回产品中心
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            产品优势
+          </h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            通过一根或多根测温光缆，构建覆盖长距离、多区域和高密度测点的温度监测网络，
+            为温升预警、热点定位和环境温度管理提供可靠数据基础。
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+

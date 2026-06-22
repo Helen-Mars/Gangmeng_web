@@ -1,0 +1,192 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const specifications = [
+  ["产品名称", "FBG 应变传感器"],
+  ["测量对象", "钢结构、混凝土结构、桥梁、隧道、设备关键受力部位"],
+  ["测量范围", "±1500 με / ±3000 με（可定制）"],
+  ["测量精度", "±1 με"],
+  ["分辨率", "0.1 με"],
+  ["中心波长", "1510–1590 nm（可定制）"],
+  ["工作温度", "-40℃～85℃"],
+  ["封装材质", "不锈钢 / 合金钢 / 复合材料（可选）"],
+  ["光纤类型", "单模光纤"],
+  ["连接方式", "FC/APC、SC/APC 或定制连接器"],
+  ["防护等级", "IP65 / IP67（视封装方案而定）"],
+  ["安装方式", "焊接、粘贴、螺栓固定或定制安装夹具"],
+];
+
+const features = [
+  {
+    icon: "mdi:crosshairs-gps",
+    title: "高精度测量",
+    desc: "可识别结构微小应变变化，适用于桥梁、建筑、隧道及设备关键受力部位的长期监测。",
+  },
+  {
+    icon: "mdi:flash-off",
+    title: "抗电磁干扰",
+    desc: "采用光信号传输，可稳定应用于强电磁、易燃易爆及复杂工业环境。",
+  },
+  {
+    icon: "mdi:link-variant",
+    title: "多点串联复用",
+    desc: "支持单根光纤串联多个传感器，减少现场布线数量并降低维护成本。",
+  },
+  {
+    icon: "mdi:tune-variant",
+    title: "封装安装可定制",
+    desc: "可按量程、尺寸、封装材质、安装方式及连接器类型进行项目化定制。",
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+    <!-- 顶部产品展示：左图右参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a
+            href="/products#sensors"
+            class="transition hover:text-cyan-700"
+          >
+            产品中心
+          </a>
+
+          <span>/</span>
+
+          <a
+            href="/products#sensors"
+            class="transition hover:text-cyan-700"
+          >
+            FBG 光纤光栅传感器
+          </a>
+
+          <span>/</span>
+
+          <span class="text-slate-700">FBG 应变传感器</span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧产品图 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/80 bg-white shadow-inner">
+                <div class="absolute bottom-[14%] h-8 w-[58%] rounded-full bg-slate-900/15 blur-2xl"></div>
+
+                <img
+                  src="/images/products/fbg-strain-sensor-thumbnail.png"
+                  alt="FBG 光纤光栅应变传感器"
+                  class="relative z-10 max-h-[68%] max-w-[80%] object-contain drop-shadow-[0_20px_22px_rgba(15,23,42,0.22)]"
+                />
+              </div>
+            </div>
+
+            <!-- 右侧产品型号与技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                FBG SENSOR SERIES
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                FBG 应变传感器
+              </h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                面向桥梁、建筑、隧道、能源装备及工业结构安全监测设计，
+                用于长期获取关键受力部位的应变变化数据，为结构状态评估、
+                预警分析与运维决策提供可靠依据。
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">
+                            {label}
+                          </th>
+
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">
+                            {value}
+                          </td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/contact#contact"
+                  class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
+                >
+                  获取选型建议
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a
+                  href="/products#sensors"
+                  class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+                >
+                  返回产品中心
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            产品优势
+          </h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            适用于复杂工程环境下的长期应变监测，可与 FBG 解调仪及监测平台组合构建完整结构健康监测系统。
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+

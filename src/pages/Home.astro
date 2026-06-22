@@ -1,12 +1,35 @@
 ---
 import { Icon } from "astro-icon/components";
-import SolutionApp1 from "../assets/application/solution1.jpg";
-const applications = [ { no: '01', title: '桥梁与建筑结构', desc: '桥梁、楼宇、大跨度结构、地基基础及关键受力构件的长期安全监测。', tags: ['应变', '位移', '倾角', '振动'], href: '/applications/structure-monitoring', }, { no: '02', title: '隧道与轨道交通', desc: '隧道围岩、衬砌、沉降、轨道振动及沿线结构状态的连续感知。', tags: ['沉降', '裂缝', '振动', '入侵'], href: '/applications/tunnel-rail', }, { no: '03', title: '电力电缆与能源管道', desc: '电缆温升、接头过热、管道泄漏及第三方施工入侵的实时预警。', tags: ['DTS', 'DAS', '温度', '泄漏'], href: '/applications/energy-pipeline', }, { no: '04', title: '风电与新能源', desc: '风机塔筒、叶片、基础结构及新能源场站设备运行状态监测。', tags: ['载荷', '振动', '温度', '疲劳'], href: '/applications/wind-power', }, { no: '05', title: '工业设备与智能制造', desc: '关键机组、储罐、压力容器、生产线及大型设备的状态诊断。', tags: ['振动', '温度', '压力', '状态诊断'], href: '/applications/industrial', }, { no: '06', title: '农业设施与冷链仓储', desc: '冷库、植物工厂、种子库、培养仓及农业环境的精细化温度监控。', tags: ['冷链', '温度', '环境', '预警'], href: '/applications/agriculture', }, ];
+import Wechat_ico from "@/assets/wechat-qr.png"
+// import SolutionApp1 from "../assets/application/solution1.jpg";
+const applications = [
+  {
+    no: '01',
+    title: '桥梁与建筑结构',
+    desc: '桥梁、楼宇、大跨度结构、地基基础及关键受力构件的长期安全监测。',
+    tags: ['应变', '位移', '倾角', '振动'],
+    href: '/applications#industries',
+  },
+  {
+    no: '02',
+    title: '隧道与轨道交通',
+    desc: '隧道围岩、衬砌、沉降、轨道振动及沿线结构状态的连续感知。',
+    tags: ['沉降', '裂缝', '振动', '入侵'],
+    href: '/applications#industries',
+  },
+  {
+    no: '03',
+    title: '电力电缆与能源管道',
+    desc: '电缆温升、接头过热、管道泄漏及第三方施工入侵的实时预警。',
+    tags: ['DTS', 'DAS', '温度', '泄漏'],
+    href: '/applications#industries',
+  },
+];
 
 const advantages = [ { no: '01', title: '自研自产', desc: '覆盖传感器、解调主机、分布式监测设备及软件平台，保障产品迭代与供货稳定性。', }, { no: '02', title: '支持定制开发', desc: '可根据监测对象、安装环境、量程精度及通信方式，提供传感器与系统级定制方案。', }, { no: '03', title: '项目级技术服务', desc: '从前期选型、点位设计到安装指导、系统调试及后期运维，提供全流程技术支持。', }, { no: '04', title: '成本与交付优势', desc: '依托自主研发与制造能力，为批量采购、OEM/ODM 与工程项目提供更具竞争力的交付方案。', }, ];
 
 
-const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与建筑结构健康监测', desc: '基于 FBG 应变、温度、位移、倾角及加速度传感器，对关键受力构件、跨中区域、支座及整体结构状态进行长期监测。', image: '/images/solution-bridge.jpg', tags: ['FBG 应变', '位移监测', '振动监测'], href: '/solutions/bridge-structure', }, { no: '02', category: 'ENERGY SECURITY', title: '电力电缆与能源管道监测', desc: '通过 DTS 分布式测温与 DAS 分布式声波技术，实现电缆温升、异常热点、管道泄漏及第三方入侵的连续监测与预警。', image: '/images/solution-energy.jpg', tags: ['DTS 测温', 'DAS 声波', '泄漏预警'], href: '/solutions/energy-pipeline', }, { no: '03', category: 'AGRICULTURAL ENVIRONMENT', title: '农业设施与冷链环境监测', desc: '面向冷库、植物工厂、种子库、培养仓及机房等场景，构建多区域、高密度、可追溯的温度环境监测系统。', image: '/images/solution-agriculture.jpg', tags: ['环境温度', '冷链监测', '异常告警'], href: '/solutions/agriculture-coldchain', }, ];
+const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与建筑结构健康监测', desc: '基于 FBG 应变、温度、位移、倾角及加速度传感器，对关键受力构件、跨中区域、支座及整体结构状态进行长期监测。', image: '/images/solutions/solution-bridge.png', tags: ['FBG 应变', '位移监测', '振动监测'], href: '/solutions#bridge-structure', }, { no: '02', category: 'ENERGY SECURITY', title: '电力电缆与能源管道监测', desc: '通过 DTS 分布式测温与 DAS 分布式声波技术，实现电缆温升、异常热点、管道泄漏及第三方入侵的连续监测与预警。', image: '/images/solutions/solution-energy.png', tags: ['DTS 测温', 'DAS 声波', '泄漏预警'], href: '/solutions#energy-pipeline', }, { no: '03', category: 'AGRICULTURAL ENVIRONMENT', title: '农业设施与冷链环境监测', desc: '面向冷库、植物工厂、种子库、培养仓及机房等场景，构建多区域、高密度、可追溯的温度环境监测系统。', image: '/images/solutions/solution-agriculture.png', tags: ['环境温度', '冷链监测', '异常告警'], href: '/solutions#agriculture-coldchain', }, ];
 
 
 ---
@@ -72,7 +95,7 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
       <div class="relative">
         <div class="relative overflow-hidden rounded-2xl bg-slate-100">
           <img
-            src={SolutionApp1.src}
+            src="/images/solution1.jpg"
             alt="港盟传感光纤传感监测系统"
             class="h-[320px] w-full object-cover sm:h-[400px] lg:h-[470px]"
           />
@@ -112,24 +135,63 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
     <div class="max-w-2xl">
       <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
         <span class="h-px w-8 bg-cyan-600"></span>
-        核心产品矩阵
+        核心产品体系
       </div>
 
       <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-        从单点传感到全域监测
+        从现场感知到智能监测决策
       </h2>
 
       <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
-        覆盖应变、温度、振动、声波等关键监测参数，
-        为结构安全、能源设施及工业设备提供可靠感知能力。
+        覆盖光纤监测主机、FBG 光纤传感器与 AI 智能监测平台，
+        构建从数据采集、分布式感知到风险分析与运维管理的完整监测体系。
       </p>
     </div>
 
     <!-- 产品卡片 -->
     <div class="mt-14 grid gap-5 md:grid-cols-3">
-      <!-- FBG -->
+      <!-- 光纤解调仪 -->
       <a
-        href="/products/fbg"
+        href="/products#interrogators"
+        class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
+      >
+        <div>
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+            <Icon
+              name="mdi:server-network"
+              width="25"
+              height="25"
+            />
+          </div>
+
+          <div class="mt-8 text-sm font-medium text-cyan-700">
+            01 / MONITORING INSTRUMENTS
+          </div>
+
+          <h3 class="mt-3 text-2xl font-semibold tracking-tight">
+            光纤解调仪与监测仪
+          </h3>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            包括 FBG 光纤光栅解调仪、DAS 分布式声波监测仪与 DTS 分布式温度监测仪，
+            为项目提供稳定的数据采集、分布式感知与远程通信能力。
+          </p>
+        </div>
+
+        <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
+          <span class="text-sm font-medium text-slate-500">
+            采集 · 解调 · 分布式监测
+          </span>
+
+          <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
+            →
+          </span>
+        </div>
+      </a>
+
+      <!-- 光纤传感器 -->
+      <a
+        href="/products#sensors"
         class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
       >
         <div>
@@ -141,20 +203,23 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
             />
           </div>
 
-          <div class="mt-8 text-sm font-medium text-cyan-700">01 / FBG</div>
+          <div class="mt-8 text-sm font-medium text-cyan-700">
+            02 / FIBER OPTIC SENSORS
+          </div>
 
           <h3 class="mt-3 text-2xl font-semibold tracking-tight">
-            光纤光栅传感器
+            FBG 光纤光栅传感器
           </h3>
 
           <p class="mt-4 leading-7 text-slate-600">
-            应变、温度、位移、压力、倾角、裂缝及加速度等多参数光纤传感产品。
+            提供应变、温度、位移、裂缝、倾角、静力水准、加速度、
+            压力与载荷等多类型传感器，满足关键部位高精度长期感知需求。
           </p>
         </div>
 
         <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
           <span class="text-sm font-medium text-slate-500">
-            单点高精度监测
+            高精度 · 多参数 · 可定制
           </span>
 
           <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
@@ -163,66 +228,37 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
         </div>
       </a>
 
-      <!-- DTS -->
+      <!-- AI 智能监测系统 -->
       <a
-        href="/products/dts"
+        href="/products#ai-monitoring"
         class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
       >
         <div>
           <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
             <Icon
-              name="mdi:thermometer-lines"
+              name="mdi:brain"
               width="25"
               height="25"
             />
           </div>
 
-          <div class="mt-8 text-sm font-medium text-cyan-700">02 / DTS</div>
-
-          <h3 class="mt-3 text-2xl font-semibold tracking-tight">
-            分布式测温系统
-          </h3>
-
-          <p class="mt-4 leading-7 text-slate-600">
-            基于光纤连续测温技术，实现长距离、多区域、高密度温度监测与异常预警。
-          </p>
-        </div>
-
-        <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
-          <span class="text-sm font-medium text-slate-500">
-            连续温度感知
-          </span>
-
-          <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
-            →
-          </span>
-        </div>
-      </a>
-
-      <!-- DAS -->
-      <a
-        href="/products/das"
-        class="group relative flex min-h-[330px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-900/5"
-      >
-        <div>
-          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
-            <Icon name="mdi:waveform" width="25" height="25" />
+          <div class="mt-8 text-sm font-medium text-cyan-700">
+            03 / AI MONITORING SYSTEM
           </div>
 
-          <div class="mt-8 text-sm font-medium text-cyan-700">03 / DAS</div>
-
           <h3 class="mt-3 text-2xl font-semibold tracking-tight">
-            分布式声波监测系统
+            AI 智能监测系统
           </h3>
 
           <p class="mt-4 leading-7 text-slate-600">
-            实时感知振动、入侵、泄漏与设备运行状态，适用于长距离分布式安全监测。
+            汇聚光纤监测设备、环境设备、视频与第三方系统数据，
+            实现异常识别、趋势研判、风险预警、智能报告与运维辅助。
           </p>
         </div>
 
         <div class="mt-10 flex items-center justify-between border-t border-slate-100 pt-5">
           <span class="text-sm font-medium text-slate-500">
-            振动与声波感知
+            融合 · 分析 · 预警 · 运维
           </span>
 
           <span class="text-lg text-cyan-700 transition-transform duration-300 group-hover:translate-x-1">
@@ -244,6 +280,8 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -531,7 +569,7 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
     <!-- 联系方式：2 × 2 紧凑布局 -->
     <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
       <a
-        href="tel:+8613800000000"
+        href="tel:+8617621251612"
         class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-900/5"
       >
         <div class="flex items-center justify-between">
@@ -540,7 +578,7 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
         </div>
 
         <div class="mt-4 text-base font-semibold text-slate-900">
-          +86 138 0000 0000
+          +86 176 2125 1612
         </div>
 
         <div class="mt-1 text-sm text-slate-500">
@@ -549,7 +587,7 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
       </a>
 
       <a
-        href="mailto:sales@example.com"
+        href="mailto:17621251612@163.com"
         class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-900/5"
       >
         <div class="flex items-center justify-between">
@@ -558,7 +596,7 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
         </div>
 
         <div class="mt-4 break-all text-base font-semibold text-slate-900">
-          sales@example.com
+          17621251612@163.com
         </div>
 
         <div class="mt-1 text-sm text-slate-500">
@@ -606,7 +644,7 @@ const solutions = [ { no: '01', category: 'STRUCTURAL SAFETY', title: '桥梁与
     <!-- 微信二维码：横向紧凑卡 -->
     <div class="mt-4 flex items-center gap-5 rounded-2xl border border-dashed border-slate-300 bg-white p-5">
       <img
-        src="/images/wechat-qr.png"
+        src={Wechat_ico.src}
         alt="港盟传感微信咨询二维码"
         class="h-20 w-20 shrink-0 rounded-xl object-cover"
       />

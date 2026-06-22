@@ -1,0 +1,304 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const specifications = [
+  ["产品名称", "AI 智能监测系统"],
+  ["系统定位", "面向光纤传感、分布式监测与多源设备数据的统一监测分析平台"],
+  ["数据接入", "FBG 解调仪、DAS、DTS、环境设备、视频及第三方系统数据"],
+  ["平台架构", "B/S 架构，支持本地部署、私有化部署或云端部署"],
+  ["数据协议", "Modbus TCP、MQTT、HTTP API、数据库接口或项目定制接口"],
+  ["监测方式", "实时数据展示、历史数据查询、趋势分析、事件回溯与告警管理"],
+  ["异常识别", "阈值告警、趋势识别、关联规则、模型分析及项目级算法配置"],
+  ["风险研判", "支持风险等级评估、变化趋势识别及多维度关联分析"],
+  ["可视化能力", "监测总览、设备状态、数据曲线、告警中心、报表及项目地图"],
+  ["报告能力", "支持日报、周报、月报、告警记录及项目定制报告导出"],
+  ["用户权限", "支持多角色、多项目、多层级权限管理"],
+  ["数据存储", "本地数据库、服务器存储、私有云或项目指定存储方式"],
+  ["系统集成", "可对接现有监控平台、运维系统、视频平台及第三方业务系统"],
+];
+
+const features = [
+  {
+    title: "多源数据统一接入",
+    desc: "汇聚光纤解调仪、分布式监测仪、环境设备、视频及第三方系统数据。",
+    icon: "mdi:database-outline",
+  },
+  {
+    title: "智能异常识别",
+    desc: "结合阈值、趋势、关联规则与模型分析，识别异常状态与潜在风险。",
+    icon: "mdi:alert-decagram-outline",
+  },
+  {
+    title: "趋势预测与风险研判",
+    desc: "对长期监测数据进行变化趋势识别、关联分析与风险等级评估。",
+    icon: "mdi:chart-timeline-variant",
+  },
+  {
+    title: "智能报告与运维辅助",
+    desc: "自动生成状态报告、告警记录与运维建议，提升项目管理效率。",
+    icon: "mdi:file-chart-outline",
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+    <!-- 顶部产品展示：左侧系统视觉，右侧参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a
+            href="/products#ai-monitoring"
+            class="transition hover:text-cyan-700"
+          >
+            产品中心
+          </a>
+
+          <span>/</span>
+
+          <a
+            href="/products#ai-monitoring"
+            class="transition hover:text-cyan-700"
+          >
+            AI 大模型监测系统
+          </a>
+
+          <span>/</span>
+
+          <span class="text-slate-700">AI 智能监测系统</span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧系统展示 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-20 -top-24 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-500/15 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70 p-5 shadow-2xl">
+                <!-- 顶部状态栏 -->
+                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-300">
+                      <Icon name="mdi:brain" width="20" height="20" />
+                    </div>
+
+                    <div>
+                      <div class="text-sm font-semibold text-white">
+                        AI Monitoring Center
+                      </div>
+
+                      <div class="mt-0.5 text-xs text-slate-400">
+                        Real-time data analysis
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+                    Online
+                  </div>
+                </div>
+
+                <!-- 数据指标 -->
+                <div class="mt-5 grid grid-cols-3 gap-3">
+                  <div class="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div class="text-xs text-slate-400">接入设备</div>
+                    <div class="mt-2 text-xl font-semibold text-white">128</div>
+                  </div>
+
+                  <div class="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div class="text-xs text-slate-400">在线率</div>
+                    <div class="mt-2 text-xl font-semibold text-cyan-300">99.8%</div>
+                  </div>
+
+                  <div class="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div class="text-xs text-slate-400">当前告警</div>
+                    <div class="mt-2 text-xl font-semibold text-amber-300">03</div>
+                  </div>
+                </div>
+
+                <!-- 趋势图区域 -->
+                <div class="mt-4 flex-1 rounded-xl border border-white/10 bg-white/[0.035] p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="text-xs font-medium text-slate-300">
+                      Monitoring Trend
+                    </div>
+
+                    <div class="text-xs text-cyan-300">
+                      Last 24 Hours
+                    </div>
+                  </div>
+
+                  <div class="relative mt-5 h-24 overflow-hidden">
+                    <div class="absolute inset-x-0 top-1/4 border-t border-dashed border-white/10"></div>
+                    <div class="absolute inset-x-0 top-2/4 border-t border-dashed border-white/10"></div>
+                    <div class="absolute inset-x-0 top-3/4 border-t border-dashed border-white/10"></div>
+
+                    <svg
+                      viewBox="0 0 400 100"
+                      class="absolute inset-0 h-full w-full"
+                      preserveAspectRatio="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M0,72 C25,68 30,52 55,58 C80,64 88,35 115,43 C140,50 153,69 178,60 C205,50 220,25 248,40 C272,53 285,44 308,35 C332,25 350,50 375,38 C385,34 392,30 400,25"
+                        fill="none"
+                        stroke="rgb(34 211 238)"
+                        stroke-width="3"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="mt-3 flex justify-between text-[10px] text-slate-500">
+                    <span>00:00</span>
+                    <span>06:00</span>
+                    <span>12:00</span>
+                    <span>18:00</span>
+                    <span>Now</span>
+                  </div>
+                </div>
+
+                <!-- 系统节点 -->
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-300">
+                      <Icon name="mdi:access-point-network" width="18" height="18" />
+                    </div>
+
+                    <div>
+                      <div class="text-xs font-medium text-white">
+                        Data Access
+                      </div>
+
+                      <div class="mt-1 text-[11px] text-slate-400">
+                        FBG / DAS / DTS
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-violet-400/10 text-violet-300">
+                      <Icon name="mdi:robot-outline" width="18" height="18" />
+                    </div>
+
+                    <div>
+                      <div class="text-xs font-medium text-white">
+                        AI Analysis
+                      </div>
+
+                      <div class="mt-1 text-[11px] text-slate-400">
+                        Alert & Risk Review
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右侧产品型号与技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                AI MONITORING SYSTEM
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                AI 智能监测系统
+              </h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                面向工程结构、能源设施、工业设备及复杂场景的综合在线监测需求，
+                将 FBG、DAS、DTS、环境设备、视频及第三方系统数据进行统一接入、
+                智能分析、风险研判与告警管理，提升项目的数字化运维能力。
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">
+                            {label}
+                          </th>
+
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">
+                            {value}
+                          </td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/contact#contact"
+                  class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
+                >
+                  获取系统方案
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a
+                  href="/products#ai-monitoring"
+                  class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+                >
+                  返回产品中心
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            产品优势
+          </h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            以统一数据底座连接现场监测设备与业务系统，形成从数据采集、
+            智能分析、异常预警到运维管理的闭环监测能力。
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
