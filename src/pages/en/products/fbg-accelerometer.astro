@@ -1,0 +1,162 @@
+---
+import Layout from "@/layouts/en/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const specifications = [
+  ["Product Name", "FBG Accelerometer"],
+  ["Measurement Object", "Structural vibration, equipment vibration, impact response, dynamic load, and acceleration changes"],
+  ["Measurement Direction", "Single-axis / dual-axis / triaxial (per model)"],
+  ["Measurement Range", "±2 g / ±5 g / ±10 g (customizable)"],
+  ["Frequency Response", "Configured per model and dynamic monitoring requirements"],
+  ["Accuracy", "Configured per model and calibration"],
+  ["Resolution", "Configured per model and acquisition system"],
+  ["Center Wavelength", "1510–1590 nm (customizable)"],
+  ["Operating Temperature", "-40℃～85℃ (customizable)"],
+  ["Packaging Material", "Stainless steel / aluminum alloy / alloy steel (optional)"],
+  ["Fiber Type", "Single-mode fiber"],
+  ["Connector", "FC/APC, SC/APC, or custom connector"],
+  ["Protection Rating", "IP65 / IP67 (depends on packaging)"],
+  ["Installation", "Bolt fixing, magnetic mounting, bracket installation, or custom fixture"],
+];
+
+const features = [
+    {
+    icon: "mdi:vibrate",
+    title: "Dynamic Vibration Sensing",
+    desc: "Continuously captures vibration responses from structures, equipment, and critical components for reliable dynamic condition assessment.",
+  },
+  {
+    icon: "mdi:flash-off",
+    title: "EMI Immunity",
+    desc: "Optical signal transmission enables stable dynamic monitoring in strong electromagnetic, flammable, and complex industrial environments.",
+  },
+  {
+    icon: "mdi:chart-timeline-variant",
+    title: "High-Frequency Response",
+    desc: "Adaptable to different frequency ranges for vibration and impact monitoring, supporting dynamic event identification and trend analysis.",
+  },
+  {
+    icon: "mdi:tune-variant",
+    title: "Customizable Range & Installation",
+    desc: "Measurement direction, range, frequency response, packaging structure, and installation method can be configured per project.",
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+        <!-- 顶部产品展示：左图右参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a href="/en/products#sensors" class="transition hover:text-cyan-700">Products</a>
+          <span>/</span>
+          <a href="/en/products#sensors" class="transition hover:text-cyan-700">FBG Fiber Optic Sensors</a>
+          <span>/</span>
+          <span class="text-slate-700">FBG Accelerometer</span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧产品图 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/80 bg-white shadow-inner">
+                <div class="absolute bottom-[14%] h-8 w-[58%] rounded-full bg-slate-900/15 blur-2xl"></div>
+
+                <img
+                  src="/images/products/fbg-accelerometer-thumbnail.png"
+                  alt="FBG Fiber Optic Accelerometer"
+                  class="relative z-10 max-h-[68%] max-w-[80%] object-contain drop-shadow-[0_20px_22px_rgba(15,23,42,0.22)]"
+                />
+              </div>
+            </div>
+
+            <!-- 右侧产品型号与技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                FBG SENSOR SERIES
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">FBG Accelerometer</h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                Designed for dynamic monitoring of bridges, building structures, wind turbines, rail transit, industrial machinery, and energy equipment — providing long-term vibration, impact, and acceleration response data for condition assessment, anomaly warning, and O&M decision-making.
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">{label}</th>
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">{value}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/en/contact#contact" class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700">
+                  Get Selection Advice
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a href="/en/products#sensors" class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700">
+                  Back to Products
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Product Advantages</h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Can be combined with FBG interrogators and monitoring platforms to build long-term online monitoring systems for structural vibration, equipment condition, wind turbine operation, traffic loads, and dynamic response analysis.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

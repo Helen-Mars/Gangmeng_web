@@ -1,0 +1,164 @@
+---
+import Layout from "@/layouts/en/Layout.astro";
+import { Icon } from 'astro-icon/components';
+
+const specifications = [
+  ['Product Name', 'DTS Distributed Temperature Monitor'],
+  ['Product Series', 'GM-DTS Series'],
+  ['Monitoring Principle', 'Fiber-optic distributed temperature sensing technology for continuous temperature acquisition and analysis'],
+  ['Monitoring Target', 'Temperature distribution, temperature rise trends, abnormal hot spots, fire risk, and temperature environment changes'],
+  ['Temperature Distance', 'Configured per device model, temperature sensing cable, and project conditions'],
+  ['Spatial Resolution', 'Configured per device model and temperature distance'],
+  ['Temperature Resolution', 'Configured per device model, sampling period, and field environment'],
+  ['Temperature Accuracy', 'Configured per device model, calibration method, and field conditions'],
+  ['Sampling Period', 'Configurable for real-time monitoring, routine inspection, and project alert requirements'],
+  ['Temperature Sensing Cable', 'Single-mode temperature sensing cable, armored cable, high-temp cable, or project custom cable'],
+  ['Channel Count', 'Single-channel / multi-channel optional, configured per model'],
+  ['Communication Interface', 'Ethernet, RS485, 4G / 5G (configured per model)'],
+  ['Platform Integration', 'Web platform, Modbus TCP, MQTT, HTTP API, or custom protocol'],
+  ['Deployment', 'Rack-mount, cabinet-mount, wall-mount, or project-integrated deployment'],
+  ['Application Environment', 'Cable tunnels, utility tunnels, cold storage, warehouses, industrial sites, and special environments'],
+];
+
+const features = [
+    {
+    icon: 'mdi:thermometer-lines',
+    title: 'Long-Distance Continuous Temperature Sensing',
+    desc: 'Uses fiber as a continuous sensing medium to obtain temperature distribution at every position along the cable, enabling large-scale, high-density temperature monitoring.',
+  },
+  {
+    icon: 'mdi:map-marker-radius',
+    title: 'Abnormal Hot Spot Location',
+    desc: 'Identifies abnormal temperature rises and hot spot areas, outputting location, trend, and timing information to assist rapid investigation.',
+  },
+  {
+    icon: 'mdi:chart-timeline-variant',
+    title: 'Temperature Trend Analysis',
+    desc: 'Continuously records historical temperature data, supporting analysis and playback of temperature rise rates, zone changes, and long-term trends.',
+  },
+  {
+    icon: 'mdi:alert-decagram-outline',
+    title: 'Multi-Level Alert Linkage',
+    desc: 'Supports alerts based on temperature thresholds, rise rates, zone differences, and combined rules, with platform and third-party system integration.',
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+        <!-- 顶部产品展示：左图右参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a href="/en/products#interrogators" class="transition hover:text-cyan-700">Products</a>
+          <span>/</span>
+          <a href="/en/products#interrogators" class="transition hover:text-cyan-700">Interrogators & Monitoring Instruments</a>
+          <span>/</span>
+          <span class="text-slate-700">DTS Distributed Temperature Monitor</span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧产品图 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/80 bg-white shadow-inner">
+                <div class="absolute bottom-[14%] h-8 w-[58%] rounded-full bg-slate-900/15 blur-2xl"></div>
+
+                <img
+                  src="/images/products/dts-monitoring-instrument-main.png"
+                  alt="DTS Distributed Temperature Monitor"
+                  class="relative z-10 max-h-[68%] max-w-[80%] object-contain drop-shadow-[0_20px_22px_rgba(15,23,42,0.22)]"
+                />
+              </div>
+            </div>
+
+            <!-- 右侧技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                DTS MONITORING INSTRUMENT
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">DTS Distributed Temperature Monitor</h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                Based on distributed fiber-optic temperature sensing technology, continuously captures temperature distribution, temperature rise trends, abnormal hot spots, and zone temperature variation along the entire fiber length — suitable for power cables, energy pipelines, cold storage, agricultural facilities, industrial equipment, and underground spaces.
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">{label}</th>
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">{value}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/en/contact#contact" class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700">
+                  Get DTS Selection Advice
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a href="/en/products#interrogators" class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700">
+                  Back to Products
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Product Advantages</h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Using one or more temperature-sensing cables, builds a temperature monitoring network covering long distances, multiple zones, and high-density measurement points — providing reliable data for temperature rise alerts, hot spot localization, and environmental temperature management.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+

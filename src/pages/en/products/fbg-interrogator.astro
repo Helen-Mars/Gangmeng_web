@@ -1,0 +1,165 @@
+---
+import Layout from "@/layouts/en/Layout.astro";
+import { Icon } from 'astro-icon/components';
+
+const specifications = [
+  ['Product Name', 'FBG Fiber Optic Interrogator'],
+  ['Product Series', 'GM-FBG-I Series'],
+  ['Compatible Sensors', 'FBG strain, temperature, displacement, crack, tilt, acceleration, pressure, and load sensors'],
+  ['Optical Channels', '4 / 8 / 16 / 32 channels optional'],
+  ['Wavelength Range', '1510–1590 nm (configured per model)'],
+  ['Wavelength Resolution', '≤ 1 pm (depends on specific model)'],
+  ['Sampling Frequency', '10 Hz～2 kHz optional (depends on channel count and model)'],
+  ['Sensor Capacity', 'Multi-point FBG daisy-chain multiplexing per channel'],
+  ['Communication Interface', 'Ethernet, RS485, USB, 4G / 5G (optional)'],
+  ['Data Protocol', 'Modbus TCP, MQTT, HTTP API, or custom protocol'],
+  ['Data Storage', 'Local cache + remote platform synchronization'],
+  ['Operating Temperature', '-20℃～60℃ (industrial grade customizable)'],
+  ['Power Supply', 'AC 220V or DC 24V (configured per model)'],
+  ['Installation', 'Desktop, rack-mount, wall-mount, or project customization'],
+];
+
+const features = [
+    {
+    icon: 'mdi:vector-link',
+    title: 'Multi-Channel Synchronous Demodulation',
+    desc: 'Supports parallel access of multiple FBG fiber optic sensors for multi-point, multi-zone engineering monitoring projects.',
+  },
+  {
+    icon: 'mdi:chart-timeline-variant',
+    title: 'High-Precision Wavelength Analysis',
+    desc: 'Real-time acquisition of grating center wavelength changes, outputting engineering data such as strain, temperature, displacement, and pressure.',
+  },
+  {
+    icon: 'mdi:lan-connect',
+    title: 'Remote Data Communication',
+    desc: 'Supports LAN, internet, and wireless communication for connection to local software, cloud platforms, or third-party systems.',
+  },
+  {
+    icon: 'mdi:shield-check-outline',
+    title: 'Industrial-Grade Stability',
+    desc: 'Designed for long-term online monitoring with status management, anomaly alerting, and remote O&M support.',
+  },
+];
+
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+        <!-- 顶部产品展示：左图右参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a href="/en/products#interrogators" class="transition hover:text-cyan-700">Products</a>
+          <span>/</span>
+          <a href="/en/products#interrogators" class="transition hover:text-cyan-700">Interrogators & Monitoring Instruments</a>
+          <span>/</span>
+          <span class="text-slate-700">FBG Fiber Optic Interrogator</span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧产品图 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/80 bg-white shadow-inner">
+                <div class="absolute bottom-[14%] h-8 w-[58%] rounded-full bg-slate-900/15 blur-2xl"></div>
+
+                <img
+                  src="/images/products/fbg-interrogator-main.png"
+                  alt="FBG Fiber Optic Interrogator"
+                  class="relative z-10 max-h-[68%] max-w-[80%] object-contain drop-shadow-[0_20px_22px_rgba(15,23,42,0.22)]"
+                />
+              </div>
+            </div>
+
+            <!-- 右侧技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                FBG INTERROGATOR
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">FBG Fiber Optic Interrogator</h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                Designed for FBG fiber optic sensor monitoring systems — integrating optical signal acquisition, wavelength demodulation, data conversion, real-time display, remote communication, and platform integration.
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">{label}</th>
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">{value}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/en/contact#contact" class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700">
+                  Get Selection Advice
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a href="/en/products#interrogators" class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700">
+                  Back to Products
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Product Advantages</h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Provides stable, scalable FBG data acquisition capability for engineering structures, industrial equipment, energy facilities, and research testing.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+

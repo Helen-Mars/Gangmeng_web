@@ -1,0 +1,163 @@
+---
+import Layout from "@/layouts/en/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const specifications = [
+  ["Product Name", "FBG Inclinometer & Tilt Sensor"],
+  ["Measurement Object", "Structural tilt, angle change, settlement difference, deflection, and relative elevation change"],
+  ["Sensor Type", "FBG Tilt Sensor / FBG Leveling System"],
+  ["Tilt Range", "±5° / ±15° / ±30° (configured per model)"],
+  ["Tilt Accuracy", "Configured per model and calibration"],
+  ["Leveling Range", "0–100 mm / 0–500 mm (configured per system)"],
+  ["Level Resolution", "Depends on model, installation conditions, and system configuration"],
+  ["Center Wavelength", "1510–1590 nm (customizable)"],
+  ["Operating Temperature", "-20℃～60℃ (customizable)"],
+  ["Packaging Material", "Aluminum alloy / stainless steel / engineering plastic (optional)"],
+  ["Fiber Type", "Single-mode fiber"],
+  ["Connector", "FC/APC, SC/APC, or custom connector"],
+  ["Protection Rating", "IP65 / IP67 (depends on packaging)"],
+  ["Installation", "Bracket fixing, base mounting, connecting pipe installation, or project customization"],
+];
+
+const features = [
+    {
+    icon: "mdi:axis-arrow",
+    title: "High-Precision Tilt Monitoring",
+    desc: "Continuously identifies tilt and angle change trends in buildings, bridges, towers, equipment foundations, and critical components.",
+  },
+  {
+    icon: "mdi:water",
+    title: "Continuous Settlement Detection",
+    desc: "Measures relative elevation changes at multiple points through a leveling system for uneven settlement and deflection monitoring.",
+  },
+  {
+    icon: "mdi:flash-off",
+    title: "EMI Immunity",
+    desc: "Optical signal transmission ensures reliable operation in strong electromagnetic, humid, flammable, and complex industrial environments.",
+  },
+  {
+    icon: "mdi:tune-variant",
+    title: "Customizable System Solutions",
+    desc: "Number of measurement points, range, installation location, connection method, and platform requirements can be configured per project.",
+  },
+];
+---
+
+<Layout>
+  <div slot="content" class="pt-16">
+        <!-- 顶部产品展示：左图右参数 -->
+    <section class="border-b border-slate-200 bg-slate-50 px-6 py-12 text-slate-900 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl">
+        <!-- 面包屑 -->
+        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <a href="/en/products#sensors" class="transition hover:text-cyan-700">Products</a>
+          <span>/</span>
+          <a href="/en/products#sensors" class="transition hover:text-cyan-700">FBG Fiber Optic Sensors</a>
+          <span>/</span>
+          <span class="text-slate-700">FBG Inclinometer & Tilt Sensor</span>
+        </div>
+
+        <!-- 统一产品卡片 -->
+        <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.06)]">
+          <div class="grid lg:grid-cols-[.9fr_1.1fr]">
+            <!-- 左侧产品图 -->
+            <div class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-cyan-50/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <div class="absolute -left-24 -top-20 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl"></div>
+              <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+
+              <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/80 bg-white shadow-inner">
+                <div class="absolute bottom-[14%] h-8 w-[58%] rounded-full bg-slate-900/15 blur-2xl"></div>
+
+                <img
+                  src="/images/products/fbg-inclinometer-thumbnail.png"
+                  alt="FBG Inclinometer & Tilt Sensor"
+                  class="relative z-10 max-h-[68%] max-w-[80%] object-contain drop-shadow-[0_20px_22px_rgba(15,23,42,0.22)]"
+                />
+              </div>
+            </div>
+
+            <!-- 右侧产品型号与技术参数 -->
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+                <span class="h-px w-8 bg-cyan-600"></span>
+                FBG SENSOR SERIES
+              </div>
+
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">FBG Inclinometer & Tilt Sensor</h1>
+
+              <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+                Designed for monitoring building structures, bridges, tunnels, excavations, towers, and large equipment foundations — providing long-term tilt change, settlement difference, deflection, and relative elevation data for structural deformation assessment, anomaly warning, and O&M decision-making.
+              </p>
+
+              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full border-collapse text-sm">
+                  <tbody>
+                    {
+                      specifications.map(([label, value]) => (
+                        <tr class="border-b border-slate-200 last:border-b-0">
+                          <th class="w-[34%] bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700 sm:px-5">{label}</th>
+                          <td class="px-4 py-3 leading-6 text-slate-600 sm:px-5">{value}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/en/contact#contact" class="inline-flex items-center gap-3 rounded-xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700">
+                  Get Selection Advice
+                  <Icon name="mdi:arrow-up-right" width="17" height="17" />
+                </a>
+
+                <a href="/en/products#sensors" class="inline-flex items-center gap-3 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700">
+                  Back to Products
+                  <Icon name="mdi:arrow-left" width="17" height="17" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 -->
+    <section class="bg-slate-50 px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+            <span class="h-px w-8 bg-cyan-600"></span>
+            PRODUCT ADVANTAGES
+          </div>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Product Advantages</h2>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Can be combined with FBG interrogators and monitoring platforms to build long-term online monitoring systems for structural tilt, settlement, deflection, and relative elevation changes.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {
+            features.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                  <Icon name={item.icon} width="25" height="25" />
+                </div>
+
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+

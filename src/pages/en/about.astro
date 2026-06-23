@@ -1,497 +1,720 @@
 ---
+
 import Layout from '@/layouts/en/Layout.astro';
 import { Icon } from 'astro-icon/components';
 
-// Keep your existing Layout import
+const productSystems = [
+{
+no: '01',
+icon: 'mdi:chart-timeline-variant',
+title: 'FBG Fiber Optic Interrogator',
+desc: 'For multiple FBG sensor types including strain, temperature, displacement, pressure, and vibration — providing high-precision, multi-channel synchronous data acquisition.',
+specs: ['16 / 32 channels optional', 'Wavelength accuracy ±1 pm', 'Sampling rate 1–5000 Hz'],
+},
+{
+no: '02',
+icon: 'mdi:waveform',
+title: 'DAS Distributed Acoustic Monitor',
+desc: 'For long-distance vibration, intrusion, construction disturbance, equipment anomalies, and acoustic events — providing continuous distributed condition sensing.',
+specs: ['Long-distance acoustic / vibration monitoring', 'Spatial resolution ≤5 m', 'Detection range up to 100 km'],
+},
+{
+no: '03',
+icon: 'mdi:thermometer-lines',
+title: 'DTS Distributed Temperature Monitor',
+desc: 'Suitable for cables, pipelines, storage tanks, cold storage, and industrial facilities — enabling continuous temperature field monitoring and hotspot alerts along the entire fiber.',
+specs: ['Temperature accuracy ±0.1 ℃', 'Spatial resolution 1 m', 'Monitoring distance 10–30 km'],
+},
+];
 
-const capabilities = [
-  {
-    no: '01',
-    title: 'Independent R&D & Manufacturing',
-    desc: 'We maintain in-house capabilities spanning fiber-optic sensors, interrogators, distributed sensing units, and software platforms—from product design through delivery support.',
-    tags: ['Sensor R&D', 'Monitoring Units', 'System Platforms'],
-  },
-  {
-    no: '02',
-    title: 'Multi-Application Product Portfolio',
-    desc: 'Our portfolio covers FBG fiber-optic sensing, DTS distributed temperature sensing, DAS distributed acoustic sensing, and related data acquisition and analytics products.',
-    tags: ['FBG', 'DTS', 'DAS'],
-  },
-  {
-    no: '03',
-    title: 'Engineering-Grade Technical Support',
-    desc: 'For real-world projects, we provide product selection, monitoring-point design, installation and deployment, system commissioning, and ongoing operation and maintenance support.',
-    tags: ['Solution Design', 'On-Site Deployment', 'System Commissioning'],
-  },
-  {
-    no: '04',
-    title: 'OEM / ODM Collaboration',
-    desc: 'We support customization across product appearance, packaging, measuring range and accuracy, interfaces, fiber length, and system integration.',
-    tags: ['Product Customization', 'Volume Delivery', 'Co-Development'],
-  },
+const packagingTypes = [
+{
+icon: 'mdi:pipe',
+title: 'Tube-Type Packaging',
+desc: 'Stainless steel tube armored design with pressure resistance, corrosion resistance, and environmental adaptability — suitable for embedded, immersion, and long-term engineering monitoring.',
+tags: ['Pressure & corrosion resistant', 'Embedded / immersion', 'Engineering-grade environment'],
+},
+{
+icon: 'mdi:rectangle-outline',
+title: 'Substrate-Type Packaging',
+desc: 'Thin-sheet structural design for easy surface mounting and field installation — suitable for strain, temperature, and structural surface condition measurement.',
+tags: ['Surface mounting', 'Strain / temperature', 'Easy installation'],
+},
+{
+icon: 'mdi:cube-outline',
+title: 'Embedded Packaging',
+desc: 'Designed for embedding in concrete, composite materials, and critical load-bearing components — enabling full-process internal stress and condition monitoring of structures.',
+tags: ['Concrete embedding', 'Composite materials', 'Full-process monitoring'],
+},
+];
+
+const proofPoints = [
+{
+icon: 'mdi:shield-check-outline',
+title: 'Long-Term Engineering Validation',
+desc: 'Products have been validated through batch, long-cycle engineering applications — with a focus on stability, data continuity, and long-term reliability in complex environments.',
+},
+{
+icon: 'mdi:factory',
+title: 'Automated Production System',
+desc: 'Leveraging mature manufacturing processes and quality control systems to support standard products, volume procurement, and stable delivery for large engineering projects.',
+},
+{
+icon: 'mdi:link-variant',
+title: 'Independent Supply Chain',
+desc: 'Covering core components, sensor packaging, interrogator manufacturing, and system integration — improving product consistency, delivery efficiency, and cost competitiveness.',
+},
+{
+icon: 'mdi:tune-variant',
+title: 'OEM / ODM Customization Service',
+desc: 'Supporting multi-dimensional customization including packaging form, measurement range and accuracy, interface and communication, fiber length, appearance structure, and system functions.',
+},
 ];
 
 const serviceSteps = [
-  {
-    no: '01',
-    title: 'Understand Requirements',
-    desc: 'Define the monitored assets, application environment, risk points, data requirements, and project delivery scope.',
-  },
-  {
-    no: '02',
-    title: 'Match the Right Products',
-    desc: 'Select standard products or define a customization direction based on technical specifications, installation conditions, and budget requirements.',
-  },
-  {
-    no: '03',
-    title: 'Support Deployment',
-    desc: 'Provide monitoring-point planning, installation guidance, system configuration, communications integration, and commissioning support.',
-  },
-  {
-    no: '04',
-    title: 'Provide Long-Term Service',
-    desc: 'Support data analysis, alert optimization, system expansion, and future product upgrade requirements.',
-  },
-];
-
-const principles = [
-  {
-    title: 'Reliability First',
-    desc: 'For long-term monitoring and complex engineering environments, we prioritize product stability, installation adaptability, and continuous data availability.',
-  },
-  {
-    title: 'Driven by Project Requirements',
-    desc: 'We provide more than standalone equipment—we focus on the monitored asset, deployment approach, and overall system usability.',
-  },
-  {
-    title: 'Built for Long-Term Partnership',
-    desc: 'We support everything from individual sensor procurement to project-level monitoring system implementation and ongoing technical service.',
-  },
+{
+no: '01',
+title: 'Requirements Analysis',
+desc: 'Define the monitored assets, installation environment, risk points, data requirements, and project delivery objectives.',
+},
+{
+no: '02',
+title: 'Product & Solution Matching',
+desc: 'Match standard products or define custom solutions based on application conditions, technical specifications, budget constraints, and deployment approach.',
+},
+{
+no: '03',
+title: 'Delivery & Deployment Support',
+desc: 'Provide monitoring-point planning, installation guidance, system configuration, communications integration, and commissioning support.',
+},
+{
+no: '04',
+title: 'Long-Term Technical Service',
+desc: 'Support data analysis, alert optimization, system expansion, product upgrades, and future project collaboration.',
+},
 ];
 ---
 
 <Layout>
   <div slot="content" class="pt-16">
 
-    <!-- ===== Hero ===== -->
-    <section class="border-b border-dashed border-slate-200 bg-white px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
-      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+<!-- Hero -->
+<section class="border-b border-dashed border-slate-200 bg-white px-6 py-16 text-slate-900 lg:px-8 lg:py-20">
+  <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-16">
 
-        <div class="max-w-2xl">
-          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
-            <span class="h-px w-8 bg-cyan-600"></span>
-            ABOUT Gangmeng Sensor
-          </div>
-
-          <h1 class="mt-5 text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
-            Fiber-Optic Sensing Technology
-            <span class="block text-cyan-600">for Critical Safety Applications</span>
-          </h1>
-
-          <p class="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
-            Gangmeng Sensor specializes in fiber-optic sensors, distributed monitoring systems,
-            and intelligent data platforms. We provide technical support from product supply through
-            engineering deployment for structural safety, energy infrastructure, industrial equipment,
-            agricultural environments, and research and testing applications.
-          </p>
-
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/contact#contact" class="btn btn-primary btn-lg">
-              Contact Our Technical Team
-              <Icon name="mdi:arrow-up-right" width="18" height="18" />
-            </a>
-
-            <a
-              href="/products"
-              class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white"
-            >
-              Explore Our Products
-            </a>
-          </div>
-
-          <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-slate-200 pt-6 text-sm text-slate-500">
-            <span>Fiber-Optic Sensing Products</span>
-            <span>Distributed Monitoring Systems</span>
-            <span>Project-Level Technical Services</span>
-          </div>
-        </div>
-
-        <!-- Company Visual -->
-        <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-          <img
-            src="/images/about/company-hero.jpg"
-            alt="Gangmeng Sensor research, development, and manufacturing capabilities"
-            class="h-[320px] w-full object-cover sm:h-[420px] lg:h-[480px]"
-          />
-
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-
-          <div class="absolute bottom-0 left-0 right-0 p-7 text-white">
-            <div class="text-xs font-medium tracking-[0.14em] text-cyan-200">
-              FIBER SENSING · MONITORING · DATA
-            </div>
-            <div class="mt-2 text-2xl font-semibold">
-              From Field Sensing to Intelligent Alerts
-            </div>
-          </div>
-        </div>
-
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+        <span class="h-px w-8 bg-cyan-600"></span>
+        ABOUT GM SENSOR
       </div>
-    </section>
 
-    <!-- ===== Page Navigation ===== -->
-    <div class="sticky top-16 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-      <div class="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-6 py-4 text-sm lg:px-8">
-        <a href="#profile" class="whitespace-nowrap font-semibold text-cyan-700">
-          Company Profile
+      <h1 class="mt-5 text-4xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
+        Fiber-Optic Sensing Technology
+        <span class="block text-cyan-600">for Critical Asset Long-Term Operation</span>
+      </h1>
+
+      <p class="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+        Shanghai Gangmeng Technology Co., Ltd. is a national high-tech enterprise specializing in
+        fiber-optic sensing and intelligent monitoring technology. Centered on FBG fiber Bragg grating,
+        DAS distributed acoustic, and DTS distributed temperature sensing technologies, we provide
+        engineering-grade sensing and data support for structural safety, energy operations, industrial
+        equipment, environmental temperature control, and research testing.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/en/contact#contact" class="btn btn-primary btn-lg">
+          Contact Technical Team
+          <Icon name="mdi:arrow-up-right" width="18" height="18" />
         </a>
-        <a href="#capabilities" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
-          Core Capabilities
+
+        <a
+          href="/en/products"
+          class="btn btn-outline btn-lg border-slate-300 text-slate-700 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white"
+        >
+          View Products
         </a>
-        <a href="#research" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
-          R&D & Manufacturing
-        </a>
-        <a href="#service" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
-          Service Approach
-        </a>
-        <a href="#principles" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">
-          Partnership Principles
-        </a>
+      </div>
+
+      <div class="mt-10 grid max-w-xl grid-cols-3 gap-3 border-t border-slate-200 pt-6">
+        <div>
+          <div class="text-2xl font-semibold text-slate-900">16</div>
+          <div class="mt-1 text-xs leading-5 text-slate-500">Invention Patents</div>
+        </div>
+
+        <div>
+          <div class="text-2xl font-semibold text-slate-900">16</div>
+          <div class="mt-1 text-xs leading-5 text-slate-500">Utility Model Patents</div>
+        </div>
+
+        <div>
+          <div class="text-2xl font-semibold text-slate-900">31</div>
+          <div class="mt-1 text-xs leading-5 text-slate-500">Software Copyrights</div>
+        </div>
       </div>
     </div>
 
-    <!-- ===== Company Profile ===== -->
-    <section
-      id="profile"
-      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
-    >
-      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+      <img
+        src="/images/about/company-hero.png"
+        alt="Gangmeng Sensor R&D, manufacturing, and testing capabilities"
+        class="h-[320px] w-full object-cover sm:h-[420px] lg:h-[480px]"
+        style="object-position: center 42%;"
+      />
 
-        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img
-            src="/images/about/company-profile.jpg"
-            alt="Gangmeng Sensor products and technical team"
-            loading="lazy"
-            class="h-[320px] w-full object-cover sm:h-[420px]"
-          />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-7 text-white">
+        <div class="text-xs font-medium tracking-[0.14em] text-cyan-200">
+          FIBER SENSING · MONITORING · DATA
+        </div>
+        <div class="mt-2 text-2xl font-semibold">
+          From Field Sensing to Intelligent Alerts
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Page Navigation -->
+<div class="sticky top-16 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-6 py-4 text-sm lg:px-8">
+    <a href="#profile" class="whitespace-nowrap font-semibold text-cyan-700">Company Profile</a>
+    <a href="#vision" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">Vision & Mission</a>
+    <a href="#technology" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">Products & Technology</a>
+    <a href="#research" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">R&D & Manufacturing</a>
+    <a href="#validation" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">Validation & Customization</a>
+    <a href="#service" class="whitespace-nowrap text-slate-600 transition hover:text-cyan-700">Service Process</a>
+  </div>
+</div>
+
+<!-- Company Profile -->
+<section
+  id="profile"
+  class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+
+    <div class="self-start overflow-hidden rounded-2xl border border-slate-200 bg-white lg:sticky lg:top-24">
+      <img
+        src="/images/about/company-profile.png"
+        alt="Gangmeng Sensor products and technical team"
+        loading="lazy"
+        class="h-[320px] w-full object-cover sm:h-[420px]"
+        style="object-position: center 42%;"
+      />
+    </div>
+
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+        <span class="h-px w-8 bg-cyan-600"></span>
+        COMPANY PROFILE
+      </div>
+
+      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+        Built Around Real-World Project Needs
+        <span class="block text-cyan-600">Deployable Fiber-Optic Monitoring Capabilities</span>
+      </h2>
+
+      <div class="mt-6 space-y-5 text-base leading-8 text-slate-600 sm:text-lg">
+        <p>
+          Gangmeng Sensor has built a complete product and service system around the framework of
+          "sensors — interrogators — data platforms — alerting applications," and continues to advance
+          integrated R&D across core components, sensor packaging, monitoring equipment, data processing,
+          and system integration.
+        </p>
+
+        <p>
+          With FBG fiber Bragg grating sensing, DAS distributed acoustic sensing, and DTS distributed
+          temperature sensing as our core technologies, we have established an independent technology
+          system covering fiber-optic sensing, energy pipelines, wind power, industrial equipment, and
+          intelligent monitoring systems.
+        </p>
+
+        <p>
+          Our focus extends beyond single sensor performance — we care about whether a product suits the
+          site environment, is easy to install, produces stable data, and can operate reliably over the
+          long term under complex working conditions.
+        </p>
+
+        <p>
+          From standard product supply to engineering project deployment and OEM/ODM collaboration,
+          Gangmeng Sensor is committed to helping customers transform monitoring requirements into
+          deployable, analyzable, alert-capable, and sustainable data systems.
+        </p>
+      </div>
+
+      <a
+        href="/en/products"
+        class="group mt-8 inline-flex items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+      >
+        Explore Our Product Portfolio
+        <span class="text-lg transition-transform group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section
+  id="vision"
+  class="scroll-mt-28 border-b border-dashed border-slate-800 bg-slate-950 px-6 py-24 text-white lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-300">
+        <span class="h-px w-8 bg-cyan-300"></span>
+        VISION & MISSION
+      </div>
+
+      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+        Continuously Innovating Sensing Technology
+        <span class="block text-cyan-300">for a Safer, Smarter Future</span>
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-2">
+      <article class="rounded-2xl border border-white/10 bg-white/[0.04] p-8 sm:p-10">
+        <div class="flex items-center gap-3 text-cyan-300">
+          <Icon name="mdi:target" width="24" height="24" />
+          <span class="text-sm font-medium tracking-[0.14em]">COMPANY VISION</span>
         </div>
 
-        <div class="max-w-2xl">
+        <h3 class="mt-8 text-2xl font-semibold leading-relaxed sm:text-3xl">
+          To become a globally leading provider of fiber Bragg grating sensing solutions.
+        </h3>
+
+        <p class="mt-6 max-w-xl text-base leading-8 text-slate-300">
+          Through continuous technological innovation, we drive the intelligent development of the
+          sustainable energy industry, supporting global energy transition, infrastructure safety,
+          and environmental protection.
+        </p>
+      </article>
+
+      <article class="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.06] p-8 sm:p-10">
+        <div class="flex items-center gap-3 text-cyan-300">
+          <Icon name="mdi:rocket-launch-outline" width="24" height="24" />
+          <span class="text-sm font-medium tracking-[0.14em]">COMPANY MISSION</span>
+        </div>
+
+        <h3 class="mt-8 text-2xl font-semibold leading-relaxed sm:text-3xl">
+          Making complex operational states perceptible, analyzable, and actionable.
+        </h3>
+
+        <p class="mt-6 max-w-xl text-base leading-8 text-slate-300">
+          Through innovative fiber Bragg grating sensing technology, we provide precise, safe monitoring
+          solutions for multi-industry applications worldwide — enhancing operational efficiency and
+          safeguarding the safety, stability, and continuity of critical assets and business activities.
+        </p>
+      </article>
+    </div>
+
+    <div class="mt-5 grid gap-4 md:grid-cols-3">
+      <div class="rounded-xl border border-white/10 px-6 py-5 text-sm text-slate-300">
+        <span class="font-semibold text-white">Reliable Sensing: </span>
+        Maintaining stable data output over the long term in complex environments.
+      </div>
+
+      <div class="rounded-xl border border-white/10 px-6 py-5 text-sm text-slate-300">
+        <span class="font-semibold text-white">Engineering Value: </span>
+        Measuring product capability by project deployment and long-term operational results.
+      </div>
+
+      <div class="rounded-xl border border-white/10 px-6 py-5 text-sm text-slate-300">
+        <span class="font-semibold text-white">Open Collaboration: </span>
+        Supporting co-innovation across products, systems, and industry applications.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product & Technology -->
+<section
+  id="technology"
+  class="scroll-mt-28 border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+      <div>
+        <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+          <span class="h-px w-8 bg-cyan-600"></span>
+          PRODUCTS & TECHNOLOGY
+        </div>
+
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          From Point Sensing to Long-Distance Distributed Monitoring
+          <span class="block text-cyan-600">Covering Multi-Scenario Engineering Needs</span>
+        </h2>
+      </div>
+
+      <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+        Gangmeng Sensor provides multi-channel, multi-type fiber-optic interrogators and a range of
+        packaging options for sensors — supporting structural safety, energy facilities, industrial
+        equipment, environmental temperature control, and research testing applications.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-3">
+      {
+        productSystems.map((item) => (
+          <article class="group rounded-2xl border border-slate-200 bg-slate-50 p-7 transition hover:-translate-y-1 hover:border-cyan-300 hover:bg-white hover:shadow-xl hover:shadow-cyan-900/5">
+            <div class="flex items-center justify-between">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                <Icon name={item.icon} width="23" height="23" />
+              </div>
+              <span class="text-sm font-medium text-cyan-700">{item.no}</span>
+            </div>
+
+            <h3 class="mt-8 text-2xl font-semibold tracking-tight text-slate-900">
+              {item.title}
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-600">
+              {item.desc}
+            </p>
+
+            <div class="mt-7 space-y-3 border-t border-slate-200 pt-5">
+              {
+                item.specs.map((spec) => (
+                  <div class="flex items-start gap-3 text-sm text-slate-600">
+                    <Icon
+                      name="mdi:check-circle-outline"
+                      width="18"
+                      height="18"
+                      class="mt-0.5 shrink-0 text-cyan-600"
+                    />
+                    <span>{spec}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-20">
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+        <span class="h-px w-8 bg-cyan-600"></span>
+        MULTI-PACKAGING SENSORS
+      </div>
+
+      <h3 class="mt-5 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+        Adapting to Different Materials, Installation Methods, and Field Conditions
+      </h3>
+
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {
+          packagingTypes.map((item) => (
+            <article class="rounded-2xl border border-slate-200 bg-white p-7">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-700">
+                <Icon name={item.icon} width="22" height="22" />
+              </div>
+
+              <h4 class="mt-7 text-xl font-semibold text-slate-900">
+                {item.title}
+              </h4>
+
+              <p class="mt-4 text-sm leading-7 text-slate-600">
+                {item.desc}
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                {
+                  item.tags.map((tag) => (
+                    <span class="rounded-full bg-cyan-50 px-3 py-1 text-xs text-cyan-700">
+                      {tag}
+                    </span>
+                  ))
+                }
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Research & Manufacturing -->
+<section
+  id="research"
+  class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+
+      <div>
+        <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+          <span class="h-px w-8 bg-cyan-600"></span>
+          R&D & MANUFACTURING
+        </div>
+
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          From Core Components to System Delivery
+          <span class="block text-cyan-600">Building Independent R&D and Manufacturing Capabilities</span>
+        </h2>
+
+        <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+          Around sensor performance, packaging structure, data acquisition, signal quality, software
+          platforms, and field adaptability, Gangmeng Sensor continuously optimizes and validates its
+          products for long-term continuous monitoring and complex project deployment.
+        </p>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold text-slate-900">Core Product R&D</div>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Covering FBG, DAS, DTS interrogators, fiber-optic sensors, and intelligent monitoring software platforms.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold text-slate-900">Sensor Packaging & Manufacturing</div>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Supporting tube-type, substrate-type, embedded, and multiple engineering-adapted packaging solutions.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold text-slate-900">Quality & Performance Validation</div>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Focusing on product consistency, signal quality, long-term stability, and adaptability to complex environments.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold text-slate-900">System Integration</div>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Supporting end-to-end combinations of sensors, interrogators, communications, data platforms, and alerting applications.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <img
+          src="/images/about/r-and-d.png"
+          alt="Fiber-optic sensing R&D environment"
+          loading="lazy"
+          class="h-56 w-full rounded-2xl object-cover sm:h-72"
+          style="object-position: center;"
+        />
+
+        <img
+          src="/images/about/manufacturing.png"
+          alt="Fiber-optic sensing product manufacturing"
+          loading="lazy"
+          class="h-56 w-full rounded-2xl object-cover sm:translate-y-10 sm:h-72"
+          style="object-position: center;"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Validation & OEM -->
+<section
+  id="validation"
+  class="scroll-mt-28 border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
+
+    <div>
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+        <span class="h-px w-8 bg-cyan-600"></span>
+        ENGINEERING VALIDATION & DELIVERY
+      </div>
+
+      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+        Proven Through Long-Term Engineering Operation
+        <span class="block text-cyan-600">Built for Scalable Partnership Delivery</span>
+      </h2>
+
+      <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+        Product reliability is not just a lab metric — it is the result of long-term operation, complex
+        environments, batch applications, and real project delivery. Through mature manufacturing systems
+        and an independent supply chain, Gangmeng Sensor provides stable, flexible, and cost-effective
+        collaboration capabilities.
+      </p>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        {
+          proofPoints.map((item) => (
+            <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-cyan-700 shadow-sm">
+                <Icon name={item.icon} width="21" height="21" />
+              </div>
+
+              <h3 class="mt-6 text-lg font-semibold text-slate-900">
+                {item.title}
+              </h3>
+
+              <p class="mt-3 text-sm leading-7 text-slate-600">
+                {item.desc}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <aside class="overflow-hidden rounded-3xl bg-slate-950 p-7 text-white sm:p-9 lg:sticky lg:top-24">
+      <div class="flex items-center gap-3 text-sm font-medium text-cyan-300">
+        <Icon name="mdi:handshake-outline" width="20" height="20" />
+        OEM / ODM CUSTOMIZATION
+      </div>
+
+      <h3 class="mt-6 text-3xl font-semibold leading-tight">
+        From Components to Systems
+        <span class="block text-cyan-300">Flexible Customization Support</span>
+      </h3>
+
+      <p class="mt-5 text-sm leading-7 text-slate-300">
+        Leveraging mature automated production systems and a fully independent supply chain, we provide
+        cost-effective, fast-response hardware and system support for large-scale engineering monitoring
+        projects, international channel partnerships, and industry solution collaboration.
+      </p>
+
+      <div class="mt-8 space-y-3">
+        <div class="flex gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200">
+          <Icon name="mdi:check-circle-outline" width="18" height="18" class="shrink-0 text-cyan-300" />
+          Product appearance, structure, dimensions, and branding customization
+        </div>
+
+        <div class="flex gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200">
+          <Icon name="mdi:check-circle-outline" width="18" height="18" class="shrink-0 text-cyan-300" />
+          Sensor packaging material, measurement range, accuracy, and fiber length customization
+        </div>
+
+        <div class="flex gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200">
+          <Icon name="mdi:check-circle-outline" width="18" height="18" class="shrink-0 text-cyan-300" />
+          Channel count, interface type, communication protocol, and interrogator function customization
+        </div>
+
+        <div class="flex gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200">
+          <Icon name="mdi:check-circle-outline" width="18" height="18" class="shrink-0 text-cyan-300" />
+          Platform functions, data visualization, alert logic, and system integration customization
+        </div>
+      </div>
+
+      <a
+        href="/en/contact#contact"
+        class="mt-8 inline-flex items-center gap-3 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+      >
+        Discuss OEM / ODM Collaboration
+        <Icon name="mdi:arrow-up-right" width="17" height="17" />
+      </a>
+    </aside>
+
+  </div>
+</section>
+
+<!-- Service Process -->
+<section
+  id="service"
+  class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+      <div>
+        <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
+          <span class="h-px w-8 bg-cyan-600"></span>
+          SERVICE PROCESS
+        </div>
+
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          From Requirements Discussion to System Operation
+          <span class="block text-cyan-600">Continuous Technical Support Throughout</span>
+        </h2>
+      </div>
+
+      <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+        Whether you need a single sensor purchase, volume interrogator supply, or a complete monitoring
+        project, we provide the matching depth of products, solutions, and technical service support.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {
+        serviceSteps.map((item) => (
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-900/5">
+            <div class="text-sm font-medium text-cyan-700">{item.no}</div>
+
+            <h3 class="mt-8 text-2xl font-semibold text-slate-900">
+              {item.title}
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-600">
+              {item.desc}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="border-b border-dashed border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-slate-50 px-6 py-20 text-slate-900 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+    <div class="overflow-hidden rounded-3xl border border-cyan-100 bg-white shadow-[0_20px_60px_rgba(8,145,178,0.08)]">
+      <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:p-14">
+
+        <div>
           <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
             <span class="h-px w-8 bg-cyan-600"></span>
-            COMPANY PROFILE
+            PARTNER WITH GANGMENG SENSOR
           </div>
 
           <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            Built Around Real-World Project Needs
-            <span class="block text-cyan-600">Deployable Fiber-Optic Monitoring Capabilities</span>
+            Have Product Procurement or Project Needs?
+            <span class="block text-cyan-600">Speak Directly with Our Technical Team.</span>
           </h2>
 
-          <div class="mt-6 space-y-5 text-base leading-8 text-slate-600 sm:text-lg">
-            <p>
-              Gangmeng Sensor is committed to applying fiber-optic sensing technology in critical fields,
-              including structural safety, energy operations, industrial equipment condition monitoring,
-              environmental temperature control, and research and testing.
-            </p>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+            Share your application scenario, estimated quantity, installation environment, technical
+            specifications, or project drawings. We will provide product selection, OEM/ODM customization
+            directions, and system deployment recommendations based on your requirements.
+          </p>
+        </div>
 
-            <p>
-              Our focus extends beyond the sensor itself: we consider whether a product is suitable for the
-              site environment, easy to install, stable in its data output, and capable of long-term operation.
-            </p>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+          <div class="text-sm font-medium text-slate-900">What You Can Discuss</div>
 
-            <p>
-              For this reason, we have built an integrated product and service framework around
-              “sensors — data acquisition units — data platforms — alerting applications,” helping clients
-              transform monitoring needs into practical, operational data systems.
-            </p>
+          <div class="mt-5 grid gap-3 text-sm sm:grid-cols-2">
+            <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+              FBG / DAS / DTS Product Selection
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+              OEM / ODM Customization
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+              Project Deployment & Monitoring-Point Design
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
+              International Delivery & Long-Term Technical Support
+            </div>
           </div>
 
           <a
-            href="/products"
-            class="group mt-8 inline-flex items-center gap-3 border-b border-slate-300 pb-2 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+            href="/en/contact#contact"
+            class="mt-7 inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
           >
-            Explore Our Product Portfolio
-            <span class="text-lg transition-transform group-hover:translate-x-1">→</span>
+            Contact Technical Team
+            <Icon name="mdi:arrow-up-right" width="17" height="17" />
           </a>
         </div>
 
       </div>
-    </section>
-
-    <!-- ===== Core Capabilities ===== -->
-    <section
-      id="capabilities"
-      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
-    >
-      <div class="mx-auto max-w-7xl">
-        <div class="max-w-2xl">
-          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
-            <span class="h-px w-8 bg-cyan-600"></span>
-            CORE CAPABILITIES
-          </div>
-
-          <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            From Products to Systems
-            <span class="block text-cyan-600">A Complete Technical Support Chain</span>
-          </h2>
-
-          <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
-            Based on customer application requirements, we provide multi-level support across product
-            development, standard supply, system integration, project deployment, and customized collaboration.
-          </p>
-        </div>
-
-        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {
-            capabilities.map((item) => (
-              <div class="min-h-[320px] rounded-2xl border border-slate-200 bg-slate-50 p-7 transition hover:border-cyan-300 hover:bg-white">
-                <div class="flex items-center justify-between">
-                  <span class="text-sm font-medium text-cyan-700">{item.no}</span>
-                  <span class="text-xs tracking-[0.12em] text-slate-400">CAPABILITY</span>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-semibold tracking-tight text-slate-900">
-                  {item.title}
-                </h3>
-
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  {item.desc}
-                </p>
-
-                <div class="mt-6 flex flex-wrap gap-2">
-                  {
-                    item.tags.map((tag) => (
-                      <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
-                        {tag}
-                      </span>
-                    ))
-                  }
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== R&D and Manufacturing ===== -->
-    <section
-      id="research"
-      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
-    >
-      <div class="mx-auto max-w-7xl">
-        <div class="grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
-
-          <div>
-            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
-              <span class="h-px w-8 bg-cyan-600"></span>
-              R&D & MANUFACTURING
-            </div>
-
-            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Focused on Product Reliability
-              <span class="block text-cyan-600">and Field Adaptability</span>
-            </h2>
-
-            <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-              From sensor packaging and product architecture to signal acquisition and system software,
-              Gangmeng Sensor continuously optimizes its products for diverse application environments,
-              making them better suited to engineering sites, industrial settings, and long-term continuous monitoring.
-            </p>
-
-            <div class="mt-8 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-xl border border-slate-200 bg-white p-5">
-                <div class="font-semibold text-slate-900">Product Development</div>
-                <p class="mt-2 text-sm leading-6 text-slate-500">
-                  Continuous optimization of sensing performance, packaging, installation compatibility, and system interoperability.
-                </p>
-              </div>
-
-              <div class="rounded-xl border border-slate-200 bg-white p-5">
-                <div class="font-semibold text-slate-900">Manufacturing & Delivery</div>
-                <p class="mt-2 text-sm leading-6 text-slate-500">
-                  Delivery support for standard products, volume procurement, engineering projects, and OEM / ODM collaboration.
-                </p>
-              </div>
-
-              <div class="rounded-xl border border-slate-200 bg-white p-5">
-                <div class="font-semibold text-slate-900">Technical Validation</div>
-                <p class="mt-2 text-sm leading-6 text-slate-500">
-                  Evaluating product stability, signal quality, and long-term performance in relevant application scenarios.
-                </p>
-              </div>
-
-              <div class="rounded-xl border border-slate-200 bg-white p-5">
-                <div class="font-semibold text-slate-900">System Integration</div>
-                <p class="mt-2 text-sm leading-6 text-slate-500">
-                  Integrated combinations of sensors, monitoring units, communications methods, and platform functions.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <img
-              src="/images/about/r-and-d.jpg"
-              alt="Fiber-optic sensing research and development"
-              loading="lazy"
-              class="h-56 w-full rounded-2xl object-cover sm:h-72"
-            />
-
-            <img
-              src="/images/about/manufacturing.jpg"
-              alt="Fiber-optic sensing product manufacturing"
-              loading="lazy"
-              class="h-56 w-full rounded-2xl object-cover sm:translate-y-10 sm:h-72"
-            />
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Service Approach ===== -->
-    <section
-      id="service"
-      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-white px-6 py-24 text-slate-900 lg:px-8"
-    >
-      <div class="mx-auto max-w-7xl">
-        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
-          <div>
-            <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
-              <span class="h-px w-8 bg-cyan-600"></span>
-              SERVICE APPROACH
-            </div>
-
-            <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              From Requirements Discussion to System Operation
-              <span class="block text-cyan-600">Continuous Technical Support Throughout</span>
-            </h2>
-          </div>
-
-          <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-            Whether you require a single sensor, a volume product supply arrangement, or a complete monitoring
-            project, we provide technical support at the depth appropriate to your requirements.
-          </p>
-        </div>
-
-        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {
-            serviceSteps.map((item) => (
-              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-7 transition hover:border-cyan-300 hover:bg-white">
-                <div class="text-sm font-medium text-cyan-700">{item.no}</div>
-
-                <h3 class="mt-8 text-2xl font-semibold text-slate-900">
-                  {item.title}
-                </h3>
-
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  {item.desc}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Partnership Principles ===== -->
-    <section
-      id="principles"
-      class="scroll-mt-28 border-b border-dashed border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 lg:px-8"
-    >
-      <div class="mx-auto max-w-7xl">
-        <div class="max-w-2xl">
-          <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
-            <span class="h-px w-8 bg-cyan-600"></span>
-            PARTNERSHIP PRINCIPLES
-          </div>
-
-          <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            Grounded in Technology
-            <span class="block text-cyan-600">Focused on Customer Project Success</span>
-          </h2>
-        </div>
-
-        <div class="mt-14 grid gap-5 md:grid-cols-3">
-          {
-            principles.map((item, index) => (
-              <div class="rounded-2xl border border-slate-200 bg-white p-7">
-                <div class="text-sm font-medium text-cyan-700">
-                  0{index + 1}
-                </div>
-
-                <h3 class="mt-8 text-2xl font-semibold text-slate-900">
-                  {item.title}
-                </h3>
-
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  {item.desc}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CTA ===== -->
-    <section class="border-b border-dashed border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-slate-50 px-6 py-20 text-slate-900 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <div class="overflow-hidden rounded-3xl border border-cyan-100 bg-white shadow-[0_20px_60px_rgba(8,145,178,0.08)]">
-          <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:p-14">
-
-            <div>
-              <div class="flex items-center gap-3 text-sm font-medium text-cyan-700">
-                <span class="h-px w-8 bg-cyan-600"></span>
-                PARTNER WITH Gangmeng Sensor
-              </div>
-
-              <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-                Looking to Source Products or Build a Project?
-                <span class="block text-cyan-600">Speak Directly with Our Technical Team.</span>
-              </h2>
-
-              <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Share your product type, application scenario, estimated quantity, installation environment,
-                or project drawings. We will provide product selection, customization, and system deployment
-                recommendations based on your needs.
-              </p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
-              <div class="text-sm font-medium text-slate-900">
-                What You Can Discuss with Us
-              </div>
-
-              <div class="mt-5 grid gap-3 text-sm sm:grid-cols-2">
-                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
-                  Product selection and specification guidance
-                </div>
-                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
-                  OEM / ODM customization collaboration
-                </div>
-                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
-                  Project deployment and monitoring-point design
-                </div>
-                <div class="rounded-xl border border-slate-200 bg-white p-4 text-slate-600">
-                  International delivery and technical support
-                </div>
-              </div>
-
-              <a
-                href="/contact#contact"
-                class="mt-7 inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700"
-              >
-                Contact Our Technical Team
-                <Icon name="mdi:arrow-up-right" width="17" height="17" />
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
   </div>
 </Layout>
