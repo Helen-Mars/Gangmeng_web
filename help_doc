@@ -13,4 +13,71 @@ git remote add origin https://github.com/Helen-Mars/Gangmeng_web.git
 git push -u origin main
 
 
-git push -u origin main                                             
+git push -u origin main          
+
+
+npm run build
+npx wrangler deploy
+
+
+git add wrangler.jsonc package.json package-lock.json
+
+
+我会按你现在的 Astro 中英文企业站来讲，重点放在能直接落地的页面、技术和发布设置。
+
+Thought for 8s
+
+SEO（搜索引擎优化）就是让 Google、Bing 等搜索引擎更容易抓取、理解、收录并推荐你的网站页面。对你现在的 Astro 中英文企业站来说，重点不是“堆关键词”，而是把网站结构、页面内容和技术基础做好。
+
+你的网站建议按下面做：
+
+1. 先确定关键词与页面对应关系
+不要只做一个“产品中心”页面。每个核心产品、应用和解决方案都应有独立页面，例如：
+
+FBG Fiber Optic Sensors
+Fiber Optic Interrogator
+Distributed Temperature Sensing / DTS
+Distributed Acoustic Sensing / DAS
+Bridge Structural Health Monitoring
+Pipeline Leak Detection
+Cold Storage Temperature Monitoring
+
+这样用户搜某个具体需求时，搜索引擎才有对应页面可以展示。
+
+2. 每个页面单独写标题和描述
+页面标题要直接说明产品或方案，例如：
+“FBG Fiber Optic Temperature Sensor Manufacturer | GM Sensor”
+
+描述用于搜索结果摘要，简洁说明产品、应用、能力和品牌。Google 可能会参考页面 description 生成搜索摘要，但前提是内容本身与页面匹配。
+
+3. 页面内容要有清晰层级
+每页只保留一个主标题 H1，下面用 H2、H3 分模块介绍参数、优势、应用、安装方式、常见问题和咨询入口。
+图片要填写准确的 alt 描述，例如“FBG temperature sensor for cold storage monitoring”，不要写无意义的“image-01”。
+
+4. 中英文独立页面要做好语言标识
+你现在用 / 做中文、/en/ 做英文，这种独立 URL 的方式是对的。
+中文页面应标记 zh-CN，英文页面标记 en；同一内容的中英文页面互相声明对应关系，也就是 hreflang。Google 推荐多语言站使用独立语言 URL，并用 hreflang 告知不同语言版本。
+
+注意：中文页和英文页都应有各自的 canonical，不要把英文页 canonical 到中文页，否则英文页可能不被正常收录。
+
+5. 配置主域名与 canonical
+统一选择一个主域名，例如 https://www.gm-sensor.com。
+根域名和 www 域名要自动跳转到同一个地址，避免重复页面。Astro 的 site 配置应填写正式域名，它会用于生成 sitemap 和 canonical URL。
+
+6. 生成 sitemap 和 robots.txt
+Astro 可以通过 sitemap 集成，在构建时自动生成网站地图。网站地图能帮助搜索引擎发现你的产品页、应用页和英文页面。
+
+然后在 Google Search Console 和 Bing Webmaster Tools 提交 sitemap。提交不代表一定立即收录，但可以查看抓取和错误情况。
+
+7. 做好移动端和速度
+Google 主要按移动端页面理解网站。手机上必须保证文字可读、菜单可用、图片不溢出、页面加载快。静态化 Astro 网站本身很适合这一点，但图片仍要压缩、使用 WebP/AVIF、避免首页加载过多大图。
+
+8. 增加高质量外部入口
+把官网链接放到 LinkedIn、Facebook、TikTok、YouTube、Google Business Profile、行业 B2B 平台、合作伙伴网站和展会页面。重点是相关、真实、有行业关联的链接，不要购买垃圾外链。
+
+9. 持续发布专业内容
+后续可以增加英文技术文章，例如 DTS 和 FBG 的区别、光纤传感器安装方式、桥梁监测方案、冷库测温方案、DAS 管道入侵监测原理。
+这些文章能持续带来搜索流量，并把访问者导向产品页和询盘页。
+
+对你的网站而言，优先级就是：
+主域名统一 → 每页标题描述 → 中英文 hreflang → sitemap/robots → Google Search Console → 产品与应用独立页面 → 技术文章。

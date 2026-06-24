@@ -1,11 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components';
 import logoImg from '../assets/gangmeng-logo.png';
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath === '/en' || currentPath.startsWith('/en/');
 ---
 
 <footer class="border-t border-slate-800 bg-slate-950 text-slate-300">
   <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
+      <div class="grid gap-10 lg:grid-cols-[1.25fr_.9fr_.9fr_.55fr_2fr]">
 
       <!-- 品牌介绍 -->
       <div>
@@ -90,13 +93,62 @@ import logoImg from '../assets/gangmeng-logo.png';
         </ul>
       </nav>
 
+
+      <!-- 语言切换 -->
+      <div>
+        <h6 class="text-sm font-semibold text-white">语言切换</h6>
+
+        <ul class="mt-5 space-y-3 text-sm">
+          <li>
+            <a
+              href="/"
+              aria-label="切换为中文"
+              aria-current={!isEnglish ? 'page' : undefined}
+              class:list={{
+                'inline-flex items-center gap-2 font-semibold text-cyan-300': !isEnglish,
+                'inline-flex items-center gap-2 text-slate-400 transition hover:text-cyan-300': isEnglish,
+              }}
+            >
+              <Icon
+                name="circle-flags:cn"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              />
+              <span>中文</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/en/"
+              aria-label="Switch to English"
+              aria-current={isEnglish ? 'page' : undefined}
+              class:list={{
+                'inline-flex items-center gap-2 font-semibold text-cyan-300': isEnglish,
+                'inline-flex items-center gap-2 text-slate-400 transition hover:text-cyan-300': !isEnglish,
+              }}
+            >
+              <Icon
+                name="circle-flags:us"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              />
+              <span>English</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
       <!-- 联系方式 -->
       <div>
         <h6 class="text-sm font-semibold text-white">联系我们</h6>
 
         <div class="mt-5 space-y-4 text-sm">
           <a
-            href="tel:+8613800000000"
+            href="tel:+8617621251612"
             class="group flex items-start gap-3 transition hover:text-cyan-300"
           >
             <Icon
@@ -112,7 +164,7 @@ import logoImg from '../assets/gangmeng-logo.png';
           </a>
 
           <a
-            href="mailto:sales@example.com"
+            href="mailto:17621251612@163.com"
             class="group flex items-start gap-3 transition hover:text-cyan-300"
           >
             <Icon
@@ -136,19 +188,23 @@ import logoImg from '../assets/gangmeng-logo.png';
             />
             <span>
               <span class="block text-xs text-slate-500">公司地址</span>
-              <span class="mt-1 block leading-6">
-                中国 · 上海市浦东新区海基六路99弄智萃科技中心创新魔坊3期3号楼零界魔方729室
+              <span class="mt-1 block max-w-md leading-6">
+                中国 · 上海市浦东新区<br />
+                海基六路 99 弄智萃科技中心创新魔坊 3 期<br />
+                3 号楼零界魔方 729 室
               </span>
             </span>
           </div>
         </div>
       </div>
+
+
     </div>
 
     <!-- 底部版权区 -->
     <div class="mt-14 flex flex-col gap-5 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-xs leading-6 text-slate-500">
-        © 2026 港盟传感 · All Rights Reserved.
+        &copy; 2026 港盟传感 · All Rights Reserved.
       </p>
 
       <div class="flex items-center gap-1">
@@ -172,15 +228,6 @@ import logoImg from '../assets/gangmeng-logo.png';
           <Icon name="simple-icons:facebook" width="18" height="18" />
         </a>
 
-        <!-- <a
-          href="https://www.linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          class="btn btn-ghost btn-sm btn-circle text-slate-400 hover:bg-white/10 hover:text-cyan-300"
-        >
-          <Icon name="simple-icons:linkedin" width="18" height="18" />
-        </a> -->
         <a
           href="https://www.tiktok.com/@gmsensor"
           target="_blank"
@@ -192,7 +239,7 @@ import logoImg from '../assets/gangmeng-logo.png';
         </a>
 
         <a
-          href="https://wa.me/861898943763"
+          href="https://wa.me/8618098943763"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
@@ -204,4 +251,3 @@ import logoImg from '../assets/gangmeng-logo.png';
     </div>
   </div>
 </footer>
-
